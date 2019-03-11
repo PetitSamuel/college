@@ -1,0 +1,117 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Divide, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000         
+    7 00000000 E3A0200E        MOV              R2, #14     ; a = 15
+    8 00000004 E3A03007        MOV              R3, #7      ; b = 7
+    9 00000008 E3A00000        MOV              R0, #0      ; quotient = 0
+   10 0000000C E1A01002        MOV              R1, R2      ; remainder = a
+   11 00000010         
+   12 00000010 E3530000        CMP              r3, #0      ;  if( b  >= 0 )
+   13 00000014 DA000004        BLE              endifzero   ; {
+   14 00000018         
+   15 00000018         whOne
+   16 00000018 E1510003        CMP              R1, R3      ;
+   17 0000001C BA000002        BLT              endwhOne    ; while (remainder 
+                                                            >= b) {
+   18 00000020         
+   19 00000020 E2800001        ADD              R0, R0, #1  ; quotient = quotie
+                                                            nt + 1
+   20 00000024 E0411003        SUB              R1, R1, R3  ; remainder = remai
+                                                            nder - b
+   21 00000028         
+   22 00000028 EAFFFFFA        B                whOne       ; }
+   23 0000002C         
+   24 0000002C         endwhOne
+   25 0000002C         
+   26 0000002C         endifzero                            ; }
+   27 0000002C         
+   28 0000002C EAFFFFFE 
+                       stop    B                stop
+   29 00000030         
+   30 00000030                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\d
+ivide.d -o.\divide.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -
+IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB
+ SETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="NO_CLOCK_SETUP S
+ETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SETA 1" --pred
+efine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\divide.lst Divide.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Divide 00000000
+
+Symbol: Divide
+   Definitions
+      At line 1 in file Divide.s
+   Uses
+      None
+Comment: Divide unused
+endifzero 0000002C
+
+Symbol: endifzero
+   Definitions
+      At line 26 in file Divide.s
+   Uses
+      At line 13 in file Divide.s
+Comment: endifzero used once
+endwhOne 0000002C
+
+Symbol: endwhOne
+   Definitions
+      At line 24 in file Divide.s
+   Uses
+      At line 17 in file Divide.s
+Comment: endwhOne used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file Divide.s
+   Uses
+      At line 3 in file Divide.s
+Comment: start used once
+stop 0000002C
+
+Symbol: stop
+   Definitions
+      At line 28 in file Divide.s
+   Uses
+      At line 28 in file Divide.s
+Comment: stop used once
+whOne 00000018
+
+Symbol: whOne
+   Definitions
+      At line 15 in file Divide.s
+   Uses
+      At line 22 in file Divide.s
+Comment: whOne used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file Divide.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+345 symbols in table

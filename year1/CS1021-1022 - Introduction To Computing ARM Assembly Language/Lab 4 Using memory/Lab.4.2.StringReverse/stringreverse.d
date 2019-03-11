@@ -1,0 +1,1 @@
+.\stringreverse.o: StringReverse.s

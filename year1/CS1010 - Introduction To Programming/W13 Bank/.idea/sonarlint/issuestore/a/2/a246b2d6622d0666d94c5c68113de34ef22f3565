@@ -1,0 +1,14 @@
+
+bsquid:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(—¿¤ëøÿÿÿÿ
+fsquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µÎ Àúÿÿÿÿ
+‹squid:S1319"vThe type of the "rideList" object should be an interface such as "SortedMap" rather than the implementation "TreeMap".(²¢ª£
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ôŠ¬œ
+asquid:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Çµí‘
+Asquid:S1481",Remove this unused "carList" local variable.(õªÜž
+csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·š†‡
+Psquid:S1854";Remove this useless assignment to local variable "carList".(õªÜž
+Ysquid:S2147"DCombine this catch with the one at line 28, which has the same body.(ï­£Ä
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ŽÄëú
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

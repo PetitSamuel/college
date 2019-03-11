@@ -1,0 +1,120 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ShiftAndAdd, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000         
+    7 00000000 E3A01009        LDR              R1, =9      ; value = 9
+    8 00000004 E3A0200B        LDR              R2, =11     ; mult = 11
+    9 00000008         
+   10 00000008 E3A00000        LDR              R0, =0      ; result = 0
+   11 0000000C E3A04000        LDR              R4,=0       ; count = 0
+   12 00000010         whl
+   13 00000010 E3520000        CMP              R2, #0      ; while(mult != 0)
+   14 00000014 0A000007        BEQ              enwh        ; {
+   15 00000018         
+   16 00000018 E1B020A2        MOVS             R2, R2, LSR #1 
+                                                            ; mult = mult >> 1
+   17 0000001C E3A0A000        LDR              R10,=0      ;
+   18 00000020 E0AAA002        ADC              R10, R2     ; carry = mult + fl
+                                                            ag
+   19 00000024         
+   20 00000024 E15A0002        CMP              R10, R2     ; if(carry != mult)
+                                                            
+   21 00000028 0A000000        BEQ              skipif      ; {
+   22 0000002C E0800411        ADD              R0, R0, R1, LSL R4 ; result += 
+                                                             value <<count
+   23 00000030         skipif
+   24 00000030 E2844001        ADD              R4, R4, #1  ; count++ }
+   25 00000034 EAFFFFF5        B                whl         ;}
+   26 00000038         enwh
+   27 00000038         
+   28 00000038 EAFFFFFE 
+                       stop    B                stop
+   29 0000003C         
+   30 0000003C         
+   31 0000003C                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\s
+hiftandadd.d -o.\shiftandadd.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS
+\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefine="
+__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="NO_CLO
+CK_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SETA
+ 1" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\shiftanda
+dd.lst ShiftAndAdd.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ShiftAndAdd 00000000
+
+Symbol: ShiftAndAdd
+   Definitions
+      At line 1 in file ShiftAndAdd.s
+   Uses
+      None
+Comment: ShiftAndAdd unused
+enwh 00000038
+
+Symbol: enwh
+   Definitions
+      At line 26 in file ShiftAndAdd.s
+   Uses
+      At line 14 in file ShiftAndAdd.s
+Comment: enwh used once
+skipif 00000030
+
+Symbol: skipif
+   Definitions
+      At line 23 in file ShiftAndAdd.s
+   Uses
+      At line 21 in file ShiftAndAdd.s
+Comment: skipif used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file ShiftAndAdd.s
+   Uses
+      At line 3 in file ShiftAndAdd.s
+Comment: start used once
+stop 00000038
+
+Symbol: stop
+   Definitions
+      At line 28 in file ShiftAndAdd.s
+   Uses
+      At line 28 in file ShiftAndAdd.s
+Comment: stop used once
+whl 00000010
+
+Symbol: whl
+   Definitions
+      At line 12 in file ShiftAndAdd.s
+   Uses
+      At line 25 in file ShiftAndAdd.s
+Comment: whl used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file ShiftAndAdd.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+345 symbols in table

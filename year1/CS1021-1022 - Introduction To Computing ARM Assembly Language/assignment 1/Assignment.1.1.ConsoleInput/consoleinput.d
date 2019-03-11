@@ -1,0 +1,1 @@
+.\consoleinput.o: ConsoleInput.s

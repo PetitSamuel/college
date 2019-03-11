@@ -1,0 +1,157 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             ConsoleInput, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 IMPORT           getkey
+    4 00000000                 IMPORT           sendchar
+    5 00000000                 EXPORT           start
+    6 00000000                 PRESERVE8
+    7 00000000         
+    8 00000000         start
+    9 00000000         
+   10 00000000 E3A04000        MOV              R4, #0      ; total = 0
+   11 00000004 E3A0500A        LDR              R5, = 10    ; 
+   12 00000008         
+   13 00000008         read
+   14 00000008 EBFFFFFE        BL               getkey      ; read key from con
+                                                            sole
+   15 0000000C         
+   16 0000000C E3500039        CMP              R0, #'9'    ; if ( ch == 0x0D )
+                                                            {
+   17 00000010 8A000009        BHI              nextgetchar ; skip next if stat
+                                                            ement  
+   18 00000014 E350000D        CMP              R0, #0x0D   ;}
+   19 00000018 0A000001        BEQ              isEnter     ; if( ch > '9' || c
+                                                            h < '*' ){
+   20 0000001C E350002A        CMP              R0, #'*'    ; skip to next inpu
+                                                            t }
+   21 00000020 3A000005        BLO              nextgetchar ;
+   22 00000024         isEnter
+   23 00000024         
+   24 00000024 E350000D        CMP              R0, #0x0D   ; while (key != CR)
+                                                            
+   25 00000028 0A000004        BEQ              endRead     ; {
+   26 0000002C EBFFFFFE        BL               sendchar    ; send key to conso
+                                                            le
+   27 00000030         
+   28 00000030 E0040495        MUL              R4, R5, R4  ; total = total * 1
+                                                            0
+   29 00000034 E2444030        SUB              R4, R4, #'0' ;
+   30 00000038 E0844000        ADD              R4, R4, R0  ; total = tmp + key
+                                                             entered
+   31 0000003C         nextgetchar
+   32 0000003C EAFFFFF1        B                read        ; }
+   33 00000040         
+   34 00000040         endRead
+   35 00000040         
+   36 00000040 EAFFFFFE 
+                       stop    B                stop
+   37 00000044         
+   38 00000044                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\c
+onsoleinput.d -o.\consoleinput.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMS
+IS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefine
+="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="NO_C
+LOCK_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SE
+TA 1" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\console
+input.lst ConsoleInput.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ConsoleInput 00000000
+
+Symbol: ConsoleInput
+   Definitions
+      At line 1 in file ConsoleInput.s
+   Uses
+      None
+Comment: ConsoleInput unused
+endRead 00000040
+
+Symbol: endRead
+   Definitions
+      At line 34 in file ConsoleInput.s
+   Uses
+      At line 25 in file ConsoleInput.s
+Comment: endRead used once
+isEnter 00000024
+
+Symbol: isEnter
+   Definitions
+      At line 22 in file ConsoleInput.s
+   Uses
+      At line 19 in file ConsoleInput.s
+Comment: isEnter used once
+nextgetchar 0000003C
+
+Symbol: nextgetchar
+   Definitions
+      At line 31 in file ConsoleInput.s
+   Uses
+      At line 17 in file ConsoleInput.s
+      At line 21 in file ConsoleInput.s
+
+read 00000008
+
+Symbol: read
+   Definitions
+      At line 13 in file ConsoleInput.s
+   Uses
+      At line 32 in file ConsoleInput.s
+Comment: read used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 8 in file ConsoleInput.s
+   Uses
+      At line 5 in file ConsoleInput.s
+Comment: start used once
+stop 00000040
+
+Symbol: stop
+   Definitions
+      At line 36 in file ConsoleInput.s
+   Uses
+      At line 36 in file ConsoleInput.s
+Comment: stop used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+getkey 00000000
+
+Symbol: getkey
+   Definitions
+      At line 3 in file ConsoleInput.s
+   Uses
+      At line 14 in file ConsoleInput.s
+Comment: getkey used once
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file ConsoleInput.s
+   Uses
+      None
+Comment: main unused
+sendchar 00000000
+
+Symbol: sendchar
+   Definitions
+      At line 4 in file ConsoleInput.s
+   Uses
+      At line 26 in file ConsoleInput.s
+Comment: sendchar used once
+3 symbols
+348 symbols in table

@@ -1,0 +1,101 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Flags, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000         
+    7 00000000 E59F0034        LDR              R0 , =0xC0001000
+    8 00000004 E59F1034        LDR              R1 , =0x51004000
+    9 00000008 E0902001        ADDS             R2 , R0 , R1 ; result = 0x11005
+                                                            000 flag : 1 carry
+   10 0000000C E59F3030        LDR              R3 , =0x92004000
+   11 00000010 E0534003        SUBS             R4 , R3 , R3 ; result = 0x00000
+                                                            000 flag : 1 zero
+   12 00000014 E59F502C        LDR              R5 , =0x74000100
+   13 00000018 E59F602C        LDR              R6 , =0x40004000
+   14 0000001C E0957006        ADDS             R7 , R5 , R6 ; result = 0xB4004
+                                                            100 flag : 1 negati
+                                                            ve 1 overflow
+   15 00000020 E59F1028        LDR              R1 , =0x6E0074F2
+   16 00000024 E59F2028        LDR              R2 , =0x211D6000
+   17 00000028 E0910002        ADDS             R0 , R1 , R2 ; result = 0x8F1DD
+                                                            4F2 flag : 1 negati
+                                                            ve 1 overflow
+   18 0000002C E59F1024        LDR              R1 , =0xBF2FDD1E
+   19 00000030 E59F2024        LDR              R2 , =0x40D022E2
+   20 00000034 E0910002        ADDS             R0 , R1 , R2 ; result = 0x00000
+                                                            000 flag : 1 zero 1
+                                                             carry
+   21 00000038         
+   22 00000038 EAFFFFFE 
+                       stop    B                stop
+   23 0000003C         
+   24 0000003C                 END
+              C0001000 
+              51004000 
+              92004000 
+              74000100 
+              40004000 
+              6E0074F2 
+              211D6000 
+              BF2FDD1E 
+              40D022E2 
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\f
+lags.d -o.\flags.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC
+:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB S
+ETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="NO_CLOCK_SETUP SET
+A 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SETA 1" --predef
+ine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\flags.lst Flags.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Flags 00000000
+
+Symbol: Flags
+   Definitions
+      At line 1 in file Flags.s
+   Uses
+      None
+Comment: Flags unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file Flags.s
+   Uses
+      At line 3 in file Flags.s
+Comment: start used once
+stop 00000038
+
+Symbol: stop
+   Definitions
+      At line 22 in file Flags.s
+   Uses
+      At line 22 in file Flags.s
+Comment: stop used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file Flags.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+344 symbols in table

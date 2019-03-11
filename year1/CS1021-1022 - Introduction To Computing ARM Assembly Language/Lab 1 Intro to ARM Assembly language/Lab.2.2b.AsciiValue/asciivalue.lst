@@ -1,0 +1,96 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             AsciiValue, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000 E3A04032        LDR              R4, ='2'    ; Load '2','0','3',
+                                                            '4' into R4...R1
+    7 00000004 E3A03030        LDR              R3, ='0'    ;
+    8 00000008 E3A02033        LDR              R2, ='3'    ;
+    9 0000000C E3A01034        LDR              R1, ='4'    ;
+   10 00000010         
+   11 00000010 E0444003        SUB              R4, R4, R3  ; Converting to dec
+                                                            imal values
+   12 00000014 E0422003        SUB              R2, R2, R3  ;
+   13 00000018 E0411003        SUB              R1, R1, R3  ;
+   14 0000001C E0433003        SUB              R3, R3, R3  ;
+   15 00000020         
+   16 00000020 E3A05FFA        LDR              R5, = 1000  ; Multiplying by 10
+                                                            ^(position)
+   17 00000024 E0000594        MUL              R0, R4, R5  ; and Adding to fin
+                                                            al result in R0
+   18 00000028         
+   19 00000028 E3A05064        LDR              R5, = 100   ;
+   20 0000002C E0060395        MUL              R6, R5, R3  ;
+   21 00000030 E0800006        ADD              R0, R0, R6  ;
+   22 00000034         
+   23 00000034 E3A0500A        LDR              R5, = 10    ;
+   24 00000038 E0060592        MUL              R6, R2, R5  ;
+   25 0000003C E0800006        ADD              R0, R0, R6  ;
+   26 00000040         
+   27 00000040 E0800001        ADD              R0, R0, R1  ;
+   28 00000044         
+   29 00000044 EAFFFFFE 
+                       stop    B                stop
+   30 00000048         
+   31 00000048                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\a
+sciivalue.d -o.\asciivalue.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\I
+nclude -IC:\Keil_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="__
+MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 516" --predefine="NO_CLOCK
+_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SETA 1
+" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\asciivalue.
+lst AsciiValue.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AsciiValue 00000000
+
+Symbol: AsciiValue
+   Definitions
+      At line 1 in file AsciiValue.s
+   Uses
+      None
+Comment: AsciiValue unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file AsciiValue.s
+   Uses
+      At line 3 in file AsciiValue.s
+Comment: start used once
+stop 00000044
+
+Symbol: stop
+   Definitions
+      At line 29 in file AsciiValue.s
+   Uses
+      At line 29 in file AsciiValue.s
+Comment: stop used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file AsciiValue.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+342 symbols in table

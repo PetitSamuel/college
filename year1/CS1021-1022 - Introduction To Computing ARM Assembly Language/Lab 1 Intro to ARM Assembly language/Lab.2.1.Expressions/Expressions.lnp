@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+"..\libcs1021\libcs1021.lib"
+".\expressions.o"
+--library_type=microlib --strict --scatter ".\Expressions.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Expressions.map" -o .\Expressions.axf

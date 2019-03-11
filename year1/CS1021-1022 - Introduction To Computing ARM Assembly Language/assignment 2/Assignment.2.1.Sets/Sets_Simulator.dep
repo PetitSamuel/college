@@ -1,0 +1,3 @@
+Dependencies for Project 'Sets', Target 'Simulator': (DO NOT MODIFY !)
+F (..\libcs1021\libcs1021.lib)(0x59F2BCC2)()
+F (.\Sets.s)(0x5A36EBAB)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\INC\Philips--pd "__UVISION_VERSION SETA 524" --pd "NO_CLOCK_SETUP SETA 1" --pd "NO_EMC_SETUP SETA 1" --pd "RAM_INTVEC SETA 1" --pd "RAM_MODE SETA 1" --pd "REMAP SETA 1"--list .\sets.lst --xref -o .\sets.o --depend .\sets.d)

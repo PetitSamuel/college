@@ -1,0 +1,1 @@
+.\displayresult.o: DisplayResult.s

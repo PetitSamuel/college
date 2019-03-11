@@ -1,0 +1,30 @@
+
+Bsquid:S3010"(Remove this assignment of "customerMap".(üœÑòþÿÿÿÿ
+esquid:S1192"KDefine a constant instead of duplicating this literal "dd-MM-yyyy" 3 times.(œ•üÜúÿÿÿÿ
+nsquid:S3008"TRename this field "SORT_CODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Žñ˜Æúÿÿÿÿ
+osquid:S3008"ZRename this field "OPENING_BALANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óé–Á
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(üœÑòþÿÿÿÿ
+Isquid:S1444"/Make this "public static SORT_CODE" field final(Žñ˜Æúÿÿÿÿ
+Jsquid:S1444"5Make this "public static OPENING_BALANCE" field final(óé–Á
+fsquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µÎ Àúÿÿÿÿ
+]squid:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(ë£ðÚ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÈåÌë
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(÷ãöËúÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(ˆ¹·Àûÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(±ãŒê
+Psquid:S2696"6Make the enclosing method "static" or remove this set.(½åºÔýÿÿÿÿ
+`squid:HiddenFieldCheck";Rename "account" which hides the field declared at line 13.(Âò§­ÿÿÿÿÿ
+Osquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck"UMake SORT_CODE a static final constant or non-public and provide accessors if needed.(Žñ˜Æúÿÿÿÿ
+‡"squid:ClassVariableVisibilityCheck"[Make OPENING_BALANCE a static final constant or non-public and provide accessors if needed.(óé–Á
+Fsquid:S1481",Remove this unused "account" local variable.(Âò§­ÿÿÿÿÿ
+Xsquid:S1854">Remove this useless assignment to local variable "foundMatch".(¼êÅíÿÿÿÿÿ
+Zsquid:S2147"ECombine this catch with the one at line 138, which has the same body.(ï­£Ä
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(•²¼Ä
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

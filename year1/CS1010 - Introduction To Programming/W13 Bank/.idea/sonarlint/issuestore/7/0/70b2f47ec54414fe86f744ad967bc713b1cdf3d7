@@ -1,0 +1,9 @@
+
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(“úÙÄ
+]squid:S2095"HUse try-with-resources or close this "FileReader" in a "finally" clause.(Üä‡Õ
+fsquid:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(µÎ Àúÿÿÿÿ
+‰squid:S1319"tThe type of the "arrayList" object should be an interface such as "List" rather than the implementation "ArrayList".(ˆŠ³ä
+Ysquid:S2147"DCombine this catch with the one at line 27, which has the same body.(ï­£Ä
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¼èúÓ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

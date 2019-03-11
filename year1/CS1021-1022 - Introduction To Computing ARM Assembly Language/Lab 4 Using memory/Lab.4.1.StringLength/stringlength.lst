@@ -1,0 +1,131 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             StringLength, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000 E59F101C        LDR              R1, =str1   ; address = adress 
+                                                            of first value
+    7 00000004 E3A00000        MOV              R0, #0      ; count = 0
+    8 00000008         
+    9 00000008         whl
+   10 00000008 E5D12000        LDRB             R2, [R1]    ; while(value != 0)
+                                                            {
+   11 0000000C E3520000        CMP              R2, #0      ; value = Memory.by
+                                                            te[address]
+   12 00000010 0A000002        BEQ              endwhl      ;
+   13 00000014 E2800001        ADD              R0, R0, #1  ; count += 1
+   14 00000018 E2811001        ADD              R1, R1, #1  ; address += 1
+   15 0000001C EAFFFFF9        B                whl         ;}
+   16 00000020         endwhl
+   17 00000020         
+   18 00000020 EAFFFFFE 
+                       stop    B                stop
+   19 00000024         
+   20 00000024         
+   21 00000024         
+   22 00000024 00000000        AREA             TestData, DATA, READWRITE
+   23 00000000         
+   24 00000000 46 72 69 
+              64 61 79 
+              00       str1    DCB              "Friday",0
+   25 00000007         
+   26 00000007                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\s
+tringlength.d -o.\stringlength.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMS
+IS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefine
+="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 524" --predefine="NO_C
+LOCK_SETUP SETA 1" --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SE
+TA 1" --predefine="RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\stringl
+ength.lst StringLength.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+StringLength 00000000
+
+Symbol: StringLength
+   Definitions
+      At line 1 in file StringLength.s
+   Uses
+      None
+Comment: StringLength unused
+endwhl 00000020
+
+Symbol: endwhl
+   Definitions
+      At line 16 in file StringLength.s
+   Uses
+      At line 12 in file StringLength.s
+Comment: endwhl used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file StringLength.s
+   Uses
+      At line 3 in file StringLength.s
+Comment: start used once
+stop 00000020
+
+Symbol: stop
+   Definitions
+      At line 18 in file StringLength.s
+   Uses
+      At line 18 in file StringLength.s
+Comment: stop used once
+whl 00000008
+
+Symbol: whl
+   Definitions
+      At line 9 in file StringLength.s
+   Uses
+      At line 15 in file StringLength.s
+Comment: whl used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+TestData 00000000
+
+Symbol: TestData
+   Definitions
+      At line 22 in file StringLength.s
+   Uses
+      None
+Comment: TestData unused
+str1 00000000
+
+Symbol: str1
+   Definitions
+      At line 24 in file StringLength.s
+   Uses
+      At line 6 in file StringLength.s
+Comment: str1 used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file StringLength.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+348 symbols in table

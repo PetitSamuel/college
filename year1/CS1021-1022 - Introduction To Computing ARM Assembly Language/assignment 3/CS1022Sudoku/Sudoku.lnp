@@ -1,0 +1,10 @@
+--cpu ARM7TDMI
+".\retarget.o"
+".\serial.o"
+".\lpc2400.o"
+".\main.o"
+".\sudoku.o"
+--library_type=microlib --strict --scatter ".\Sudoku.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Sudoku.map" -o .\Sudoku.axf

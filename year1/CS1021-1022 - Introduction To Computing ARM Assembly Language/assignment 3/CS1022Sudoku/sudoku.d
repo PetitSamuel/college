@@ -1,0 +1,1 @@
+.\sudoku.o: Sudoku.s

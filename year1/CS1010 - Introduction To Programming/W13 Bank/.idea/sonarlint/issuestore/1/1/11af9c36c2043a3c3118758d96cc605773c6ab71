@@ -1,0 +1,4 @@
+
+Msquid:S1197"8Move the array designator from the variable to the type.(ßÓÇù
+Psquid:S1172"6Remove this unused method parameter "currentLocation".(ÑŠù´ýÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(ŽÄëú

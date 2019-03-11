@@ -1,0 +1,4 @@
+
+Šsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(À’í¸úÿÿÿÿ
+™squid:S1319"The type of the "customerTransactions" object should be an interface such as "List" rather than the implementation "ArrayList".(ñâÞ©üÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(•²¼Ä

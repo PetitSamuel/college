@@ -1,0 +1,1 @@
+.\fpadd.o: FpAdd.s

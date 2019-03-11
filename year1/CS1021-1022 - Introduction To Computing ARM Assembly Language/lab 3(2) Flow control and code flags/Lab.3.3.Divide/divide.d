@@ -1,0 +1,1 @@
+.\divide.o: Divide.s

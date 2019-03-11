@@ -1,0 +1,3 @@
+Dependencies for Project 'Expressions', Target 'External SDRAM': (DO NOT MODIFY !)
+F (..\libcs1021\libcs1021.lib)(0x59D778EB)()
+F (.\Expressions.s)(0x59D772F1)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I C:\Keil_v5\ARM\RV31\INC-I C:\Keil_v5\ARM\CMSIS\Include-I C:\Keil_v5\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 516" --pd "NO_CLOCK_SETUP SETA 1" --pd "NO_EMC_SETUP SETA 1" --pd "RAM_INTVEC SETA 1" --pd "RAM_MODE SETA 1" --pd "REMAP SETA 1"--list .\expressions.lst --xref -o .\expressions.o --depend .\expressions.d)

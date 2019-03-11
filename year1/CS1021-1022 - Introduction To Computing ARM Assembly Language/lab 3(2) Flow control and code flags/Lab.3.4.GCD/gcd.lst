@@ -1,0 +1,123 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             GCD, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000                 EXPORT           start
+    4 00000000         
+    5 00000000         start
+    6 00000000         
+    7 00000000 E3A02064        MOV              R2,#100     ; (a = 12)
+    8 00000004 E3A03008        MOV              R3,#8       ; (b = 18)
+    9 00000008         
+   10 00000008         whiledifferent
+   11 00000008 E1520003        CMP              R2, R3      ; 
+   12 0000000C 0A000005        BEQ              endwhile    ;while (a != b) { 
+   13 00000010         
+   14 00000010 E1520003        CMP              R2, R3      ;  if(a > b)
+   15 00000014 3A000001        BLO              else        ; {
+   16 00000018 E0422003        SUB              R2, R2, R3  ; a = a - b
+   17 0000001C EA000000        B                endif       ; }
+   18 00000020         
+   19 00000020         else                                 ; else {
+   20 00000020 E0433002        SUB              R3, R3, R2  ; b = b - a
+   21 00000024         endif                                ;}
+   22 00000024         
+   23 00000024 EAFFFFF7        B                whiledifferent ; }
+   24 00000028         endwhile
+   25 00000028         
+   26 00000028 E1A00002        MOV              R0, R2      ; result = a
+   27 0000002C         
+   28 0000002C         
+   29 0000002C EAFFFFFE 
+                       stop    B                stop
+   30 00000030         
+   31 00000030                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\g
+cd.d -o.\gcd.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Ke
+il_v5\ARM\INC\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 
+1" --predefine="__UVISION_VERSION SETA 524" --predefine="NO_CLOCK_SETUP SETA 1"
+ --predefine="NO_EMC_SETUP SETA 1" --predefine="RAM_INTVEC SETA 1" --predefine=
+"RAM_MODE SETA 1" --predefine="REMAP SETA 1" --list=.\gcd.lst GCD.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+GCD 00000000
+
+Symbol: GCD
+   Definitions
+      At line 1 in file GCD.s
+   Uses
+      None
+Comment: GCD unused
+else 00000020
+
+Symbol: else
+   Definitions
+      At line 19 in file GCD.s
+   Uses
+      At line 15 in file GCD.s
+Comment: else used once
+endif 00000024
+
+Symbol: endif
+   Definitions
+      At line 21 in file GCD.s
+   Uses
+      At line 17 in file GCD.s
+Comment: endif used once
+endwhile 00000028
+
+Symbol: endwhile
+   Definitions
+      At line 24 in file GCD.s
+   Uses
+      At line 12 in file GCD.s
+Comment: endwhile used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 5 in file GCD.s
+   Uses
+      At line 3 in file GCD.s
+Comment: start used once
+stop 0000002C
+
+Symbol: stop
+   Definitions
+      At line 29 in file GCD.s
+   Uses
+      At line 29 in file GCD.s
+Comment: stop used once
+whiledifferent 00000008
+
+Symbol: whiledifferent
+   Definitions
+      At line 10 in file GCD.s
+   Uses
+      At line 23 in file GCD.s
+Comment: whiledifferent used once
+7 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file GCD.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+346 symbols in table

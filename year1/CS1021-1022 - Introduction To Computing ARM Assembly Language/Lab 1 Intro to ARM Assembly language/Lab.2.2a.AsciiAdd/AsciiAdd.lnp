@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+"..\libcs1021\libcs1021.lib"
+".\asciiadd.o"
+--library_type=microlib --strict --scatter ".\AsciiAdd.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\AsciiAdd.map" -o .\AsciiAdd.axf

@@ -1,0 +1,7 @@
+--cpu ARM7TDMI
+"..\libcs1021\libcs1021.lib"
+".\bubblesort.o"
+--library_type=microlib --strict --scatter ".\BubbleSort.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\BubbleSort.map" -o .\BubbleSort.axf

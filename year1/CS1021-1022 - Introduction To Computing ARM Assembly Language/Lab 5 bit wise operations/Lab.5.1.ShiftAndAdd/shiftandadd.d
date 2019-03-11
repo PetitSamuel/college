@@ -1,0 +1,1 @@
+.\shiftandadd.o: ShiftAndAdd.s
