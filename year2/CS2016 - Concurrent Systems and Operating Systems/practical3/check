@@ -1,0 +1,23 @@
+echo "ANALYSIS STARTS"
+rm *.trail
+
+echo "SIMULATE 100 STEPS"
+spin -u100 dphil.pml
+
+echo ""
+
+echo "COMPILE VERIFIER"
+# script to generate executable 'pan'
+
+echo ""
+
+echo "STANDARD VERIFICATION"
+#script to do verification and observe trail if errors occur
+
+echo ""
+
+echo "PROGRESS VERIFICATION"
+# script to do verification and observe trail if errors occur
+
+echo ""
+echo "ANALYSIS COMPLETE"
