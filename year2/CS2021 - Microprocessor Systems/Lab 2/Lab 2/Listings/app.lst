@@ -1,0 +1,514 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             AsmTemplate, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000         
+    4 00000000         ; sample program makes the 4 LEDs P1.16, P1.17, P1.18, P
+                       1.19 go on and off in sequence
+    5 00000000         ; (c) Mike Brady, 2011 -- 2019.
+    6 00000000         
+    7 00000000                 EXPORT           start
+    8 00000000         start
+    9 00000000         
+   10 00000000         ; R0 = Number to display
+   11 00000000 E59F01C4        LDR              R0,= -419
+   12 00000004 E3A0C000        MOV              R12, #0     ; assume number is 
+                                                            positive
+   13 00000008 E3A01102        LDR              R1,= 0x80000000
+   14 0000000C E0002001        AND              R2, R0, R1
+   15 00000010 E3520000        CMP              R2, #0
+   16 00000014 0A000003        BEQ              positive
+   17 00000018 E3A0C001        MOV              R12, #1     ; record fact that 
+                                                            number is negative
+   18 0000001C E3E01000        LDR              R1,= 0xFFFFFFFF ;number is nega
+                                                            tive so we record t
+                                                            his fact in R12 and
+                                                             get the two's comp
+                                                            lement of the numbe
+                                                            r
+   19 00000020 E0200001        EOR              R0, R0, R1  ;gets ones compleme
+                                                            nt
+   20 00000024 E2800001        ADD              R0, R0, #1  ;add one to get two
+                                                            's complement
+   21 00000028         positive                             ;number was positiv
+                                                            e or is now positiv
+                                                            e as two's compleme
+                                                            nt has been gotten
+   22 00000028 E59F61A0        LDR              R6,= storeNumbers
+   23 0000002C E59F51A0        LDR              R5,= 0x3B9ACA00 
+                                                            ;Load one billion
+   24 00000030 E1A01005        MOV              R1, R5
+   25 00000034 EB000014        BL               div         ;divide our number 
+                                                            by R5
+   26 00000038 E5C61000        STRB             R1, [R6]    ;store number of di
+                                                            visions into addres
+                                                            s of R6
+   27 0000003C E2866001        ADD              R6, R6, #1  ;increment R6
+   28 00000040 E1A07000        MOV              R7, R0
+   29 00000044 E59F518C        LDR              R5,= 0x5F5E100
+   30 00000048         keepDividing
+   31 00000048 E3550001        CMP              R5, #1
+   32 0000004C 9A00000A        BLS              finishedDividing
+   33 00000050 E1A01005        MOV              R1, R5
+   34 00000054 EB00000C        BL               div         ;divide our number 
+                                                            by R5
+   35 00000058 E5C61000        STRB             R1, [R6]    ;store number of di
+                                                            visions into addres
+                                                            s of R6
+   36 0000005C E2866001        ADD              R6, R6, #1  ;increment R6
+   37 00000060 E1A07000        MOV              R7, R0
+   38 00000064 E1A00005        MOV              R0, R5
+   39 00000068 E3A0100A        MOV              R1, #0x0000000A ;divide our div
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                                                            isor by 10 to get n
+                                                            ext digit
+   40 0000006C EB000006        BL               div
+   41 00000070 E1A05001        MOV              R5, R1
+   42 00000074 E1A00007        MOV              R0, R7      ;move our number ba
+                                                            ck in
+   43 00000078 EAFFFFF2        B                keepDividing
+   44 0000007C         finishedDividing                     ;only single digit 
+                                                            remains
+   45 0000007C E5C60000        STRB             R0, [R6]
+   46 00000080 E59F8154        LDR              R8,=sign    ;
+   47 00000084 E5C8C000        STRB             R12, [R8]   ;
+   48 00000088 EA000008        B                flashResults
+   49 0000008C         
+   50 0000008C         
+   51 0000008C         div                                  ;R0 = numerator, R1
+                                                             = divisor; R0 = re
+                                                            turn remaining numb
+                                                            er after division, 
+                                                            R1 = return number 
+                                                            of divisions
+   52 0000008C E92D5FF0        STMFD            SP!, {LR, R4-R12}
+   53 00000090 E3A04000        MOV              R4, #0      ; 0 successful divi
+                                                            sions
+   54 00000094         while
+   55 00000094 E1500001        CMP              R0, R1
+   56 00000098 BA000002        BLT              completeDiv
+   57 0000009C E0400001        SUB              R0, R0, R1
+   58 000000A0 E2844001        ADD              R4, R4, #1
+   59 000000A4 EAFFFFFA        B                while
+   60 000000A8         completeDiv
+   61 000000A8 E1A01004        MOV              R1, R4      ;return number of d
+                                                            ivisions
+   62 000000AC E8BD9FF0        LDMFD            SP!, {PC, R4-R12}
+   63 000000B0         
+   64 000000B0         flashResults
+   65 000000B0         
+   66 000000B0 E0028018 
+                       IO1DIR  EQU              0xE0028018
+   67 000000B0 E0028014 
+                       IO1SET  EQU              0xE0028014
+   68 000000B0 E002801C 
+                       IO1CLR  EQU              0xE002801C
+   69 000000B0 E59FC124        LDR              R12,= sign  ;
+   70 000000B4 E5DCC000        LDRB             R12, [R12]  ;
+   71 000000B8 E59F1124        ldr              r1,=IO1DIR
+   72 000000BC E3A0280F        ldr              r2,=0x000f0000 ;select P1.19--P
+                                                            1.16
+   73 000000C0 E5812000        str              r2,[r1]     ;make them outputs
+   74 000000C4 E59F111C        ldr              r1,=IO1SET
+   75 000000C8 E5812000        str              r2,[r1]     ;set them to turn t
+                                                            he LEDs off
+   76 000000CC E59F2118        ldr              r2,=IO1CLR
+   77 000000D0         ; r1 points to the SET register
+   78 000000D0         ; r2 points to the CLEAR register
+   79 000000D0 EB000035        BL               waitASecond
+   80 000000D4 E35C0000        CMP              R12, #0
+   81 000000D8 0A000001        BEQ              positiveSign
+   82 000000DC E3A0380D        ldr              r3,=0x000D0000
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   83 000000E0 EA000000        B                endsign
+   84 000000E4         positiveSign
+   85 000000E4 E3A03805        ldr              r3,= 0x00050000
+   86 000000E8         endsign
+   87 000000E8 E5823000        str              r3,[r2]     ;clear the bit -> t
+                                                            urn on the LED
+   88 000000EC EB00002E        BL               waitASecond
+   89 000000F0 E59F60D8        LDR              R6,= storeNumbers
+   90 000000F4 E3A07000        MOV              R7, #0      ;counter
+   91 000000F8 E3A08000        MOV              R8, #0      ;have started boole
+                                                            an
+   92 000000FC         loop
+   93 000000FC E357000A        CMP              R7, #10
+   94 00000100 0AFFFFEA        BEQ              flashResults
+   95 00000104 E7D69007        LDRB             R9, [R6, R7]
+   96 00000108 E3590000        CMP              R9, #0
+   97 0000010C 1A000001        BNE              display
+   98 00000110 E3580000        CMP              R8, #0
+   99 00000114 0A00001A        BEQ              increment
+  100 00000118         
+  101 00000118         display
+  102 00000118 E3A08001        MOV              R8, #1
+  103 0000011C E92D1000        STMFD            SP!, {R12}
+  104 00000120 E1A09809        MOV              R9, R9, LSL #16
+  105 00000124 E3A0A801        LDR              R10,= 0x00010000
+  106 00000128 E3A0B802        LDR              R11,= 0x00020000
+  107 0000012C E3A0C701        LDR              R12,= 0x00040000
+  108 00000130 E3A05702        LDR              R5,= 0x00080000
+  109 00000134 E009A00A        AND              R10, R9, R10
+  110 00000138 E009B00B        AND              R11, R9, R11
+  111 0000013C E009C00C        AND              R12, R9, R12
+  112 00000140 E0095005        AND              R5, R9, R5
+  113 00000144 E1A0A18A        MOV              R10, R10, LSL #3
+  114 00000148 E1A0B08B        MOV              R11, R11, LSL #1
+  115 0000014C E1A0C0AC        MOV              R12, R12, LSR #1
+  116 00000150 E1A051A5        MOV              R5, R5, LSR #3
+  117 00000154 E3A09000        MOV              R9, #0
+  118 00000158 E189900A        ORR              R9, R9,R10
+  119 0000015C E189900B        ORR              R9, R9,R11
+  120 00000160 E189900C        ORR              R9, R9,R12
+  121 00000164 E1899005        ORR              R9, R9,R5
+  122 00000168 E5813000        str              r3,[r1]
+  123 0000016C E1A03009        MOV              R3, R9
+  124 00000170 E3530000        CMP              R3, #0
+  125 00000174 1A000000        BNE              notZero
+  126 00000178 E3A0380F        LDR              R3,=0x000f0000
+  127 0000017C         notZero
+  128 0000017C E5823000        str              r3,[r2]     ;clear the bit -> t
+                                                            urn on the LED
+  129 00000180 EB000009        BL               waitASecond
+  130 00000184         increment
+  131 00000184 E2877001        ADD              R7, R7, #1
+  132 00000188         
+  133 00000188 E357000A        CMP              R7, #10
+  134 0000018C 1A000004        BNE              skipExtraCheck
+  135 00000190 E3580000        CMP              R8, #0
+  136 00000194 1A000002        BNE              skipExtraCheck
+  137 00000198         ; numer is 0, display it
+  138 00000198 E3A0380F        LDR              R3,=0x000f0000
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  139 0000019C E5823000        str              r3,[r2]     ;clear the bit -> t
+                                                            urn on the LED
+  140 000001A0 EB000003        BL               wait
+  141 000001A4         skipExtraCheck
+  142 000001A4 E8BD1000        LDMFD            SP!, {R12}
+  143 000001A8 EAFFFFD3        B                loop
+  144 000001AC         ;subroutine which pauses the program for about one secon
+                       d
+  145 000001AC         waitASecond
+  146 000001AC         
+  147 000001AC E92D4008        STMFD            SP!, {LR, R3}
+  148 000001B0 E59F303C        LDR              r3,=10000000
+  149 000001B4         wait
+  150 000001B4 E3530000        CMP              R3, #0
+  151 000001B8 0A000001        BEQ              stopWaiting
+  152 000001BC E2433001        SUB              R3, R3, #1  ;
+  153 000001C0 EAFFFFFB        B                wait
+  154 000001C4         stopWaiting
+  155 000001C4         
+  156 000001C4 E8BD8008        LDMFD            SP!, {PC, R3}
+  157 000001C8         
+  158 000001C8 EAFFFFFE 
+                       stop    B                stop
+  159 000001CC FFFFFE5D 
+              00000000 
+              3B9ACA00 
+              05F5E100 
+              00000000 
+              00000000 
+              E0028018 
+              E0028014 
+              E002801C 
+              00000000 
+              00989680         AREA             Grids, DATA, READWRITE
+  160 00000000         
+  161 00000000         storeNumbers
+  162 00000000 00 00 00 
+              00 00 00 
+              00 00 00 
+              00               DCB              0,0,0,0,0,0,0,0,0,0
+  163 0000000A         sign
+  164 0000000A 00              DCB              0
+  165 0000000B                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\a
+pp.d -o.\app.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Ke
+il_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 
+1" --predefine="__UVISION_VERSION SETA 516" --list=.\listings\app.lst App.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AsmTemplate 00000000
+
+Symbol: AsmTemplate
+   Definitions
+      At line 1 in file App.s
+   Uses
+      None
+Comment: AsmTemplate unused
+completeDiv 000000A8
+
+Symbol: completeDiv
+   Definitions
+      At line 60 in file App.s
+   Uses
+      At line 56 in file App.s
+Comment: completeDiv used once
+display 00000118
+
+Symbol: display
+   Definitions
+      At line 101 in file App.s
+   Uses
+      At line 97 in file App.s
+Comment: display used once
+div 0000008C
+
+Symbol: div
+   Definitions
+      At line 51 in file App.s
+   Uses
+      At line 25 in file App.s
+      At line 34 in file App.s
+      At line 40 in file App.s
+
+endsign 000000E8
+
+Symbol: endsign
+   Definitions
+      At line 86 in file App.s
+   Uses
+      At line 83 in file App.s
+Comment: endsign used once
+finishedDividing 0000007C
+
+Symbol: finishedDividing
+   Definitions
+      At line 44 in file App.s
+   Uses
+      At line 32 in file App.s
+Comment: finishedDividing used once
+flashResults 000000B0
+
+Symbol: flashResults
+   Definitions
+      At line 64 in file App.s
+   Uses
+      At line 48 in file App.s
+      At line 94 in file App.s
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+increment 00000184
+
+Symbol: increment
+   Definitions
+      At line 130 in file App.s
+   Uses
+      At line 99 in file App.s
+Comment: increment used once
+keepDividing 00000048
+
+Symbol: keepDividing
+   Definitions
+      At line 30 in file App.s
+   Uses
+      At line 43 in file App.s
+Comment: keepDividing used once
+loop 000000FC
+
+Symbol: loop
+   Definitions
+      At line 92 in file App.s
+   Uses
+      At line 143 in file App.s
+Comment: loop used once
+notZero 0000017C
+
+Symbol: notZero
+   Definitions
+      At line 127 in file App.s
+   Uses
+      At line 125 in file App.s
+Comment: notZero used once
+positive 00000028
+
+Symbol: positive
+   Definitions
+      At line 21 in file App.s
+   Uses
+      At line 16 in file App.s
+Comment: positive used once
+positiveSign 000000E4
+
+Symbol: positiveSign
+   Definitions
+      At line 84 in file App.s
+   Uses
+      At line 81 in file App.s
+Comment: positiveSign used once
+skipExtraCheck 000001A4
+
+Symbol: skipExtraCheck
+   Definitions
+      At line 141 in file App.s
+   Uses
+      At line 134 in file App.s
+      At line 136 in file App.s
+
+start 00000000
+
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: start
+   Definitions
+      At line 8 in file App.s
+   Uses
+      At line 7 in file App.s
+Comment: start used once
+stop 000001C8
+
+Symbol: stop
+   Definitions
+      At line 158 in file App.s
+   Uses
+      At line 158 in file App.s
+Comment: stop used once
+stopWaiting 000001C4
+
+Symbol: stopWaiting
+   Definitions
+      At line 154 in file App.s
+   Uses
+      At line 151 in file App.s
+Comment: stopWaiting used once
+wait 000001B4
+
+Symbol: wait
+   Definitions
+      At line 149 in file App.s
+   Uses
+      At line 140 in file App.s
+      At line 153 in file App.s
+
+waitASecond 000001AC
+
+Symbol: waitASecond
+   Definitions
+      At line 145 in file App.s
+   Uses
+      At line 79 in file App.s
+      At line 88 in file App.s
+      At line 129 in file App.s
+
+while 00000094
+
+Symbol: while
+   Definitions
+      At line 54 in file App.s
+   Uses
+      At line 59 in file App.s
+Comment: while used once
+20 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Grids 00000000
+
+Symbol: Grids
+   Definitions
+      At line 159 in file App.s
+   Uses
+      None
+Comment: Grids unused
+sign 0000000A
+
+Symbol: sign
+   Definitions
+      At line 163 in file App.s
+   Uses
+      At line 46 in file App.s
+      At line 69 in file App.s
+
+storeNumbers 00000000
+
+Symbol: storeNumbers
+   Definitions
+      At line 161 in file App.s
+   Uses
+      At line 22 in file App.s
+      At line 89 in file App.s
+
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+IO1CLR E002801C
+
+Symbol: IO1CLR
+   Definitions
+      At line 68 in file App.s
+   Uses
+      At line 76 in file App.s
+Comment: IO1CLR used once
+IO1DIR E0028018
+
+Symbol: IO1DIR
+   Definitions
+      At line 66 in file App.s
+   Uses
+      At line 71 in file App.s
+Comment: IO1DIR used once
+IO1SET E0028014
+
+Symbol: IO1SET
+   Definitions
+      At line 67 in file App.s
+   Uses
+      At line 74 in file App.s
+Comment: IO1SET used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file App.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+362 symbols in table

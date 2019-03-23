@@ -1,0 +1,34 @@
+ntroduction
+The purpose of this lab is to encourage you to become familiar with interrupt handling. The concepts behind interrupts and interrupt handling mark a big break with the relatively simple programming model you have used until now. Interrupts are used very extensively and form part of virtually every computer system. In addition, they are a fundamental component of operating systems.
+
+Task
+The task is to set up a timed interrupt exactly every 5 ms (milliseconds) and to use it to make the RGB LED (it's actually a  package of three LEDs) at the top right of the board change colour in rotating sequence. Each colour should light for exactly one second before going on to the next. Did I mention that the timing has to be exact?
+
+Notes
+It is extremely important to think about the "architecture" of your software. You should make the interrupt handler as absolutely simple and as generic as possible, and you should package the specific functionality of your application into the main (non-interrupt) code. A good rule of thumb would be that the interrupt handler should deal with the timing and the main program (and/or its subroutines) should deal with the LEDs -- there should be no LED code in the interrupt handler at all.
+
+There is quite a bit you'll have to figure out, and interrupts can be very difficult to debug. Here are some pointers.
+
+Your programs are assembled and linked to a small library called EA-LPC2138-EDU- ASM.lib. The library contains startup code that initialises the system and then transfers program execution to your program.
+
+Here are some details about some of the things the startup code does:
+
+It sets up initial stack pointers for all processor modes.
+
+It installs exception handlers for all exceptions. You can't change any of these without changing the library. However, the exception handler for interrupts jumps to the location contained in the VICVectAddr of the Vectored Interrupt Controller (VIC) -- see below. You must ensure that the VICVectAddr points to your interrupt handler when your timer interrupts occur.
+
+It sets up a number of clocks. The basic clock runs at 14,745,600 Hz and is derived from a quartz crystal resonator. This clock frequency is "multiplied" by 4 using circuitry called a Phase Lock Loop (PLL) to make the processor clock run at 58,982,400 Hz. The processor clock is then divided by 4 to give the ARM Peripheral Bus (APB) clock -- the APB clock. Thus, the APB clock frequency is the same as the crystal resonator frequency: 14,745,600 Hz.
+
+The LPC2138 timers (see next point) are driven by the APB clock, so if you wanted to count off a particular period, you would calculate the number of APB clock cycles ("ticks") needed.
+
+The LPC2138 has a number of timers (see Chapter 14 of the LPC2138 User Manual), and they can be configured to time events in terms of APB clock ticks, or to count off a designated number of APB clock ticks. Upon reaching the number, they can be programmed to generate an interrupt request and/or to reset and start counting again. You need to work out what's best for this application and to set up a timer accordingly.
+
+The LPC2138 handles interrupts with a special device called a Vectored Interrupt Controller (VIC) -- see Chapter 7 of the LPC2138 User Manual. The VIC receives interrupts requests from peripherals, including the timers, prioritises them and, if appropriate, makes interrupt requests to the processor. The interrupt handler can obtain information from the VIC about the actual interrupt. In fact, the VIC can be set up so that one of its registers -- VICVectAddr -- contains the address of an appropriate in- terrupt handler when the interrupt exception handler starts running, so the exception handler could simply jump to that address. That's how our boards are set up. You need to set up the VIC to respond to the timer interrupt request appropriately.
+Suggestion
+This is going to take a while -- you should plan to work a fair bit outside the lab time.
+
+Start with a sample program from the website. Make all the changes slowly and incrementally -- this is experimental programming -- and always bear in mind how you are going to test each piece of functionality.
+
+Interrupt handlers are generally difficult to debug; for that reason alone, you should keep them very simple.Think very carefully how you are going to check whether your code is working. You have almost no debugging tools, and anyway they aren't much use when you're debugging interrupt handlers. You'll have to use your imagination to find ways of checking your code.
+
+Think carefully about how you will measure 5 ms intervals. Can you be sure you're measuring and using times correctly so as not to introduce any timing inaccuracies?

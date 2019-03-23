@@ -1,0 +1,21 @@
+The purpose of this lab is to allow you to get familiar with some of the tools and information sources you need. The trickiest part initially will be getting your PC, board and connections all set up and definitely working. In the last 45 minutes of the lab, your progress will be evaluated.
+
+Task
+The task is to download, assemble, flash and run our standard sample program.
+
+Once you have the program running, vary the time delay in it to see what happens, and to ensure that it really is your program the board is executing.
+
+What can you say about when the time delay is very short?
+
+Suggestion
+To get started, do the following, in order:
+
+Download the standard assembly language project from here to your Documents folder.
+Extract, compile and load it (see this figure ).
+If you have problems flashing, check the settings under "Configure Flash Tools… ", and ensure they look like this . Also, it may be that the COM port needs to be checked and changed. With the ARM board plugged in, use the Device Manager to check the ports, like this , choose the highest one (5 in the example) and put it in the project's fmsettings.txt file, in the project folder. It should look something like this .
+Troubleshooting Notes
+If you can't get the board to respond, check some of these issues:
+
+Board Configuration. We will be programming the board via its `ISP Mode' and you should ensure the board's jumpers are set up correctly. Refer to the settings in this diagram .
+Serial Link Drivers. The USB cable that connects the PC to the board in fact connects the PC to an USB-to-serial converter on the board, (made by FTDI). The PC has drivers for the converter, but it may have to install them. When they are installed, the PC will have two extra ports – you should select the higher numbered new one.
+Please submit your Project Folder as a zip archive on the Practical 1 Submission page by the end of your practical.
