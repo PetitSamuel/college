@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'SnackBarController.dart';
-import 'Verification.dart';
+import 'package:brief_threat/Controllers/SnackBarController.dart';
+import 'package:brief_threat/Processors/InputProcessor.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'Requests.dart';
-import 'Tokens/TokenProcessor.dart';
+import 'package:brief_threat/Processors/HttpRequestsProcessor.dart';
+import 'package:brief_threat/Processors/TokenProcessor.dart';
 
 class Register extends StatefulWidget {
   final SharedPreferences prefs;
@@ -175,7 +175,7 @@ class _Register extends State <Register> {
   }
 
   void _createNewUser () async {
-    accessToken = await TokenParser.checkTokens(accessToken, refreshToken, prefs);
+    accessToken = await TokenProcessor.checkTokens(accessToken, refreshToken, prefs);
     if (accessToken == null) {
       // no longer logged in, pop both screens back to login screen & remove prefs
       await this.prefs.remove('access');
