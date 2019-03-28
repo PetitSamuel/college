@@ -2,64 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e776d5e1-c1a7-4057-a1d8-177c7906cb6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/.idea/CS2013_3013.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/.idea/CS2013_3013.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/briefthreat.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/briefthreat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/resources/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/resources/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/resources/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/resources/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/edited_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/edited_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/edited_form.mjml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/edited_form.mjml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/email_pw_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/email_pw_reset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/email_pw_reset.mjml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/email_pw_reset.mjml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_form.mjml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_form.mjml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_user.mjml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/new_user.mjml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/notification.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/notification.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/notification.mjml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/app/templates/notification.mjml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/build/app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/backend/build/app.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/ForgotPassword.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/FormScreen.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/Register.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/Requests.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/SnackBarController.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/Tokens/TokenProcessor.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/Tokens/models/AccessToken.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/Tokens/models/RefreshToken.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/Verification.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/lib/model/request.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../CS2013 - Programming Project II/brief_threat/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/CompetitionDijkstra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shortest Path Lab/CompetitionDijkstra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/Dijkstra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shortest Path Lab/Dijkstra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/Edge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shortest Path Lab/Edge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shortest Path Lab/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/tinyEWD.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1000EWD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/1000EWD.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompetitionDijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionDijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dijkstra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Edge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Edge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tinyEWD.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tinyEWD.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,32 +38,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+            <state relative-caret-position="54">
+              <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3546#3555#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/1000EWD.txt">
+        <entry file="file://$PROJECT_DIR$/1000EWD.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5550">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="286">
+              <caret line="5033" column="4" selection-start-line="5033" selection-start-column="4" selection-end-line="5033" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -117,20 +72,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
-              <folding>
-                <element signature="e#3268#3274#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tinyEWD.txt">
+        <entry file="file://$PROJECT_DIR$/tinyEWD.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" selection-start-line="6" selection-end-line="7" />
+            <state relative-caret-position="180">
+              <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -138,21 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding>
-                <element signature="e#5503#5504#0" expanded="true" />
-                <element signature="e#5527#5528#0" expanded="true" />
-                <element signature="e#5703#5704#0" expanded="true" />
-                <element signature="e#5727#5728#0" expanded="true" />
-                <element signature="e#2159#2160#0" expanded="true" />
-                <element signature="e#2188#2189#0" expanded="true" />
-                <element signature="e#1846#1847#0" expanded="true" />
-                <element signature="e#1882#1883#0" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="e#2256#2257#0" expanded="true" />
-                <element signature="e#3664#3670#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="345">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -160,19 +99,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Edge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            <state relative-caret-position="255">
+              <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
               <folding>
-                <element signature="e#294#295#0" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#341#342#0" expanded="true" />
-                <element signature="e#365#366#0" expanded="true" />
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-                <element signature="e#456#457#0" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
                 <element signature="e#569#570#0" expanded="true" />
-                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#637#638#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -201,9 +132,15 @@
       <find>dist</find>
       <find>DirectedEdge</find>
       <find>IndexMinPQ</find>
-      <find>adj</find>
       <find>pq</find>
       <find>E</find>
+      <find>System</find>
+      <find>priority</find>
+      <find>455</find>
+      <find>808</find>
+      <find>adj</find>
+      <find>iter</find>
+      <find>hasPathTo</find>
     </findStrings>
     <replaceStrings>
       <replace>Edge</replace>
@@ -215,10 +152,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Graph.java" />
-        <option value="$PROJECT_DIR$/src/Edge.java" />
-        <option value="$PROJECT_DIR$/src/Dijkstra.java" />
         <option value="$PROJECT_DIR$/src/CompetitionDijkstra.java" />
+        <option value="$PROJECT_DIR$/src/Dijkstra.java" />
+        <option value="$PROJECT_DIR$/src/Edge.java" />
+        <option value="$PROJECT_DIR$/src/Graph.java" />
       </list>
     </option>
   </component>
@@ -234,7 +171,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -252,13 +188,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553727794528" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553787593947" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -267,6 +204,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -310,72 +248,59 @@
       <option name="presentableId" value="Default" />
       <updated>1553704876698</updated>
       <workItem from="1553704880274" duration="13055000" />
+      <workItem from="1553779030230" duration="8302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13055000" />
+    <option name="totallyTimeSpent" value="21357000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16436082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16602103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32937366" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44816414" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44816414" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Flutter Inspector" />
-      <window_info anchor="right" id="Flutter Outline" />
-      <window_info anchor="right" id="Database" weight="0.32982844" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32937366" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Flutter Inspector" order="5" />
+      <window_info anchor="right" id="Flutter Outline" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32982844" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="10" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/jdk-11.0.2/lib/src.zip!/java.base/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3537">
           <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -386,76 +311,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tinyEWD.txt">
+    <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" selection-start-line="6" selection-end-line="7" />
+        <state relative-caret-position="120">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Edge.java">
+    <entry file="file://$PROJECT_DIR$/1000EWD.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding>
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="5033" column="4" selection-start-line="5033" selection-start-column="4" selection-end-line="5033" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+    <entry file="file://$PROJECT_DIR$/tinyEWD.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="115" column="4" selection-start-line="115" selection-start-column="4" selection-end-line="115" selection-end-column="4" />
           <folding>
-            <element signature="e#5503#5504#0" expanded="true" />
-            <element signature="e#5527#5528#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5727#5728#0" expanded="true" />
-            <element signature="e#2159#2160#0" expanded="true" />
-            <element signature="e#2188#2189#0" expanded="true" />
-            <element signature="e#1846#1847#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
-            <element signature="e#2222#2223#0" expanded="true" />
-            <element signature="e#2256#2257#0" expanded="true" />
-            <element signature="e#3664#3670#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3546#3555#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#3268#3274#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/1000EWD.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5550">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
+    <entry file="file://$PROJECT_DIR$/src/Edge.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="72" column="12" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
+          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>

@@ -16,16 +16,12 @@
  */
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CompetitionDijkstra {
-
     Graph graph;
-    int [] adj;
     int sA, sB, sC;
+
     /**
      * @param filename: A filename containing the details of the city road network
      * @param sA, sB, sC: speeds for 3 contestants
@@ -41,7 +37,6 @@ public class CompetitionDijkstra {
             int streets = br.nextInt();
 
             this.graph = new Graph(intersections);
-            String line;
             while ((br.hasNext())) {
                 int firstVertex = br.nextInt();
                 int secondVertex = br.nextInt();
@@ -65,53 +60,77 @@ public class CompetitionDijkstra {
     * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
-        List<double[]> paths = new ArrayList<>();
-        for (int i = 0; i < this.graph.V(); i++) {
+        // compute shortest path on every single intersection and keep the edges & distances
+        List<Dijkstra> dijkstras = new ArrayList<>();
+        // priority queue of edges of these paths will help us find the best intersection to go to
+        PriorityQueue<Edge> pq = new PriorityQueue<>();
+        for (int i = 0; i < this.graph.countVertices(); i++) {
             Dijkstra path = new Dijkstra(this.graph, i);
+            dijkstras.add(path);
             double[] current = path.distTo;
-            paths.add(current);
-            System.out.println(path.toString() + "\n");
-        }
-        double min = Double.MAX_VALUE;
-        double[] distances = new double[3];
-        for(int i = 0; i < this.graph.V() - 2; i++) {
-            for (int j = i +1; j < this.graph.V() - 1; j++) {
-                for (int k = j + 1; k < this.graph.V(); k++) {
-                    for(int l = 0; l < this.graph.V(); l++) {
-                        double dist = paths.get(i)[l] +  paths.get(j)[l] +  paths.get(k)[l];
-                        if (min > dist) {
-                            min = dist;
-                            distances[0] = paths.get(i)[l];
-                            distances[1] = paths.get(j)[l];
-                            distances[2] = paths.get(k)[l];
-                        }
-                    }
-                }
+            for(int j = 0; j < current.length; j++) {
+                // add all paths in a priority queue
+                pq.add(new Edge(i, j, current[j]));
             }
         }
-        getSpeeds(distances);
 
-        //TO DO
-        return -1;
+        boolean found = false;
+        int directionVertex = -1;
+        // hash map with key of meeting point intersection & body is a list of the starting point of intersections
+        HashMap<Integer, List<Integer>> shortestPath = new HashMap<>();
+
+        while (!pq.isEmpty() && !found) {
+            Edge e = pq.remove();
+            directionVertex = e.to();
+
+            // add to hashmap
+            if (!shortestPath.containsKey(directionVertex)) {
+                List<Integer> path = new ArrayList<Integer>();
+                path.add(e.from());
+                shortestPath.put(directionVertex, path);
+            } else {
+                List<Integer> path = shortestPath.get(directionVertex);
+                path.add(e.from());
+            }
+
+            // if a destination path has 3 different ways to get to, we choose that one
+            if (shortestPath.get(directionVertex).size() > 2) {
+                found = true;
+            }
+
+        }
+        // if found is false, there is no way for all contestants to meet
+        if (!found) {
+            return -1;
+        }
+
+        double[] distances = new double[3];
+        List<Integer> list = shortestPath.get(directionVertex);
+        // get list of distances to get from selected intersection to final intersection
+        for (int i = 0; i < list.size(); i++) {
+            distances[i] = dijkstras.get(list.get(i)).distTo[directionVertex];
+        }
+        return (int) Math.ceil(getSpeeds(distances));
     }
-    public void getSpeeds (double[] dist) {
+
+    double getSpeeds (double[] dist) {
 
         double[] speeds = {this.sA, this.sB, this.sC};
         Arrays.sort(speeds);
         Arrays.sort(dist);
         double tempsTotal = 0;
+        // allocate the smallest distance to the person walking the slowest
         for (int i = 0; i < 3; i++) {
             tempsTotal += dist[i] / (speeds[i] * 0.001);
             System.out.println(speeds[i] * 0.001);
         }
 
-        System.out.println("final time : " + tempsTotal);
-
+        return tempsTotal;
     }
 
     public static void main(String [] args) {
-        CompetitionDijkstra val = new CompetitionDijkstra("/home/sam/dev/college/year2/CS2010 - Algorithms and Data Structures/Shortest Path Lab/src/1000EWD.txt", 50, 70, 80);
-        val.timeRequiredforCompetition();
+        CompetitionDijkstra val = new CompetitionDijkstra("1000EWD.txt", 50, 70, 80);
+        System.out.println(val.timeRequiredforCompetition());
     }
 
 }

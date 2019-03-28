@@ -1,33 +1,31 @@
 
 public class Edge implements Comparable<Edge> {
-    private final int v;
-    private final int w;
-    private final double weight;
+    private final int from;
+    private final int to;
+    private final double distance;
 
-    public Edge(int v, int w, double weight) {
-        this.v = v;
-        this.w = w;
-        this.weight = weight;
+    public Edge(int from, int w, double weight) {
+        this.from = from;
+        this.to = w;
+        this.distance = weight;
     }
 
     public int from() {
-        return v;
+        return from;
     }
-
     public int to() {
-        return w;
+        return to;
     }
-
-    public double weight() {
-        return weight;
+    public double distance() {
+        return distance;
     }
-
     public String toString() {
-        return v + "->" + w + " " + String.format("%5.2f", weight);
+        return from + "->" + to + " " + String.format("%5.2f", distance);
     }
 
+    // enables use of priority queue (used after computing all shortest paths)
     @Override
     public int compareTo(Edge other) {
-        return Double.compare(this.weight(), other.weight());
+        return Double.compare(this.distance(), other.distance());
     }
 }
