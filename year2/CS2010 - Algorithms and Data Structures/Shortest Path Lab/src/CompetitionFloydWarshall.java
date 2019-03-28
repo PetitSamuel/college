@@ -15,25 +15,80 @@
  * This class implements the competition using Floyd-Warshall algorithm
  */
 
-public class CompetitionFloydWarshall {
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.*;
 
+public class CompetitionFloydWarshall {
+    Graph graph;
+    int sA, sB, sC;
     /**
      * @param filename: A filename containing the details of the city road network
      * @param sA, sB, sC: speeds for 3 contestants
      */
     CompetitionFloydWarshall (String filename, int sA, int sB, int sC){
+        this.sA = sA;
+        this.sB = sB;
+        this.sC = sC;
 
-        //TODO
+        try {
+            Scanner br = new Scanner(new FileReader(filename));
+            int intersections = br.nextInt();
+            int streets = br.nextInt();
+
+            this.graph = new Graph(intersections);
+            while ((br.hasNext())) {
+                int firstVertex = br.nextInt();
+                int secondVertex = br.nextInt();
+                double weight = br.nextDouble();
+
+                this.graph.addEdge(new Edge(firstVertex, secondVertex, weight));
+            }
+            br.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Couldn't find input file");
+        }
+        catch (Exception e) {
+            System.out.println("File is not structured as expected, error when parsing data from file.");
+        }
     }
 
 
     /**
      * @return int: minimum minutes that will pass before the three contestants can meet
      */
-    public int timeRequiredforCompetition(){
+    public int timeRequiredforCompetition() {
+        FloydWarshall shortestPath = new FloydWarshall(this.graph);
+        PriorityQueue<Edge> pq = new PriorityQueue<>();
 
-        //TO DO
-        return -1;
+        for (int i = 0; i < shortestPath.distTo.length; i++) {
+            for (int j = 0; j < shortestPath.distTo[i].length; j++) {
+                pq.add(new Edge(i, j, shortestPath.distTo[i][j]));
+            }
+        }
+
+        Processor computeBestOption = new Processor(pq);
+        HashMap<Integer, List<Integer>> foundPath = computeBestOption.foundPath;
+        int dir = computeBestOption.finalVertex;
+
+        double[] distances = new double[3];
+        List<Integer> list = foundPath.get(dir);
+
+        for (int i = 0; i < list.size(); i++) {
+            distances[i] = shortestPath.distTo[list.get(i)][dir];
+        }
+
+        int[] speeds = {this.sA, this.sB, this.sC};
+        return (int) Math.ceil(Processor.getSpeeds(distances, speeds));
+
+    }
+
+
+
+    public static void main (String [] args) {
+        CompetitionFloydWarshall floyd = new CompetitionFloydWarshall("tinyEWD.txt", 80, 50, 70);
+        System.out.println(floyd.timeRequiredforCompetition());
     }
 
 }

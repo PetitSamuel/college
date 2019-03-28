@@ -51,7 +51,6 @@ public class CompetitionDijkstra {
         }
         catch (Exception e) {
             System.out.println("File is not structured as expected, error when parsing data from file.");
-            return;
         }
     }
 
@@ -74,35 +73,10 @@ public class CompetitionDijkstra {
             }
         }
 
-        boolean found = false;
-        int directionVertex = -1;
-        // hash map with key of meeting point intersection & body is a list of the starting point of intersections
-        HashMap<Integer, List<Integer>> shortestPath = new HashMap<>();
 
-        while (!pq.isEmpty() && !found) {
-            Edge e = pq.remove();
-            directionVertex = e.to();
-
-            // add to hashmap
-            if (!shortestPath.containsKey(directionVertex)) {
-                List<Integer> path = new ArrayList<Integer>();
-                path.add(e.from());
-                shortestPath.put(directionVertex, path);
-            } else {
-                List<Integer> path = shortestPath.get(directionVertex);
-                path.add(e.from());
-            }
-
-            // if a destination path has 3 different ways to get to, we choose that one
-            if (shortestPath.get(directionVertex).size() > 2) {
-                found = true;
-            }
-
-        }
-        // if found is false, there is no way for all contestants to meet
-        if (!found) {
-            return -1;
-        }
+        Processor computeBestOption = new Processor(pq);
+        HashMap<Integer, List<Integer>> shortestPath = computeBestOption.foundPath;
+        int directionVertex = computeBestOption.finalVertex;
 
         double[] distances = new double[3];
         List<Integer> list = shortestPath.get(directionVertex);
@@ -110,26 +84,14 @@ public class CompetitionDijkstra {
         for (int i = 0; i < list.size(); i++) {
             distances[i] = dijkstras.get(list.get(i)).distTo[directionVertex];
         }
-        return (int) Math.ceil(getSpeeds(distances));
+
+        int[] speeds = {this.sA, this.sB, this.sC};
+        return (int) Math.ceil(Processor.getSpeeds(distances, speeds));
     }
 
-    double getSpeeds (double[] dist) {
-
-        double[] speeds = {this.sA, this.sB, this.sC};
-        Arrays.sort(speeds);
-        Arrays.sort(dist);
-        double tempsTotal = 0;
-        // allocate the smallest distance to the person walking the slowest
-        for (int i = 0; i < 3; i++) {
-            tempsTotal += dist[i] / (speeds[i] * 0.001);
-            System.out.println(speeds[i] * 0.001);
-        }
-
-        return tempsTotal;
-    }
 
     public static void main(String [] args) {
-        CompetitionDijkstra val = new CompetitionDijkstra("1000EWD.txt", 50, 70, 80);
+        CompetitionDijkstra val = new CompetitionDijkstra("tinyEWD.txt", 50, 70, 80);
         System.out.println(val.timeRequiredforCompetition());
     }
 
