@@ -46,8 +46,32 @@ public class CompetitionDijkstra {
             }
             br.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             System.out.println("Couldn't find input file");
+        }
+        catch (Exception e) {
+            System.out.println("File is not structured as expected, error when parsing data from file.");
+        }
+    }
+
+    // from scanner
+    CompetitionDijkstra (Scanner scan, int sA, int sB, int sC) {
+        this.sA = sA;
+        this.sB = sB;
+        this.sC = sC;
+
+        try {
+            int intersections = scan.nextInt();
+            int streets = scan.nextInt();
+
+            this.graph = new Graph(intersections);
+            while ((scan.hasNext())) {
+                int firstVertex = scan.nextInt();
+                int secondVertex = scan.nextInt();
+                double weight = scan.nextDouble();
+
+                this.graph.addEdge(new Edge(firstVertex, secondVertex, weight));
+            }
+            scan.close();
         }
         catch (Exception e) {
             System.out.println("File is not structured as expected, error when parsing data from file.");
@@ -69,7 +93,9 @@ public class CompetitionDijkstra {
             double[] current = path.distTo;
             for(int j = 0; j < current.length; j++) {
                 // add all paths in a priority queue
-                pq.add(new Edge(i, j, current[j]));
+                if (current[j] != Double.MAX_VALUE) {
+                    pq.add(new Edge(i, j, current[j]));
+                }
             }
         }
 
@@ -78,9 +104,13 @@ public class CompetitionDijkstra {
         HashMap<Integer, List<Integer>> shortestPath = computeBestOption.foundPath;
         int directionVertex = computeBestOption.finalVertex;
 
-        double[] distances = new double[3];
         List<Integer> list = shortestPath.get(directionVertex);
         // get list of distances to get from selected intersection to final intersection
+        if (list.size() != 3) {
+            return -1;
+        }
+
+        double[] distances = new double[3];
         for (int i = 0; i < list.size(); i++) {
             distances[i] = dijkstras.get(list.get(i)).distTo[directionVertex];
         }
@@ -88,11 +118,4 @@ public class CompetitionDijkstra {
         int[] speeds = {this.sA, this.sB, this.sC};
         return (int) Math.ceil(Processor.getSpeeds(distances, speeds));
     }
-
-
-    public static void main(String [] args) {
-        CompetitionDijkstra val = new CompetitionDijkstra("tinyEWD.txt", 50, 70, 80);
-        System.out.println(val.timeRequiredforCompetition());
-    }
-
 }

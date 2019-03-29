@@ -17,7 +17,7 @@ public class FloydWarshall {
         // initialize distances to infinity
         for (int v = 0; v < V; v++) {
             for (int w = 0; w < V; w++) {
-                distTo[v][w] = Double.POSITIVE_INFINITY;
+                distTo[v][w] = Double.MAX_VALUE;
             }
         }
 
@@ -44,10 +44,6 @@ public class FloydWarshall {
                         distTo[v][w] = distTo[v][i] + distTo[i][w];
                         edgeTo[v][w] = edgeTo[i][w];
                     }
-                }
-                // check for negative cycle
-                if (distTo[v][v] < 0.0) {
-                    return;
                 }
             }
         }

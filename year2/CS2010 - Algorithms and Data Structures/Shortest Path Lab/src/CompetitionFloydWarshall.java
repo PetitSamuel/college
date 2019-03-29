@@ -46,8 +46,32 @@ public class CompetitionFloydWarshall {
             }
             br.close();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             System.out.println("Couldn't find input file");
+        }
+        catch (Exception e) {
+            System.out.println("File is not structured as expected, error when parsing data from file.");
+        }
+    }
+
+    // from scanner
+    CompetitionFloydWarshall (Scanner scan, int sA, int sB, int sC) {
+        this.sA = sA;
+        this.sB = sB;
+        this.sC = sC;
+
+        try {
+            int intersections = scan.nextInt();
+            int streets = scan.nextInt();
+
+            this.graph = new Graph(intersections);
+            while ((scan.hasNext())) {
+                int firstVertex = scan.nextInt();
+                int secondVertex = scan.nextInt();
+                double weight = scan.nextDouble();
+
+                this.graph.addEdge(new Edge(firstVertex, secondVertex, weight));
+            }
+            scan.close();
         }
         catch (Exception e) {
             System.out.println("File is not structured as expected, error when parsing data from file.");
@@ -64,7 +88,9 @@ public class CompetitionFloydWarshall {
 
         for (int i = 0; i < shortestPath.distTo.length; i++) {
             for (int j = 0; j < shortestPath.distTo[i].length; j++) {
-                pq.add(new Edge(i, j, shortestPath.distTo[i][j]));
+                if (shortestPath.distTo[i][j] != Double.MAX_VALUE) {
+                    pq.add(new Edge(i, j, shortestPath.distTo[i][j]));
+                }
             }
         }
 
@@ -72,9 +98,12 @@ public class CompetitionFloydWarshall {
         HashMap<Integer, List<Integer>> foundPath = computeBestOption.foundPath;
         int dir = computeBestOption.finalVertex;
 
-        double[] distances = new double[3];
         List<Integer> list = foundPath.get(dir);
 
+        if (list.size() != 3) {
+            return -1;
+        }
+        double[] distances = new double[3];
         for (int i = 0; i < list.size(); i++) {
             distances[i] = shortestPath.distTo[list.get(i)][dir];
         }
@@ -83,12 +112,4 @@ public class CompetitionFloydWarshall {
         return (int) Math.ceil(Processor.getSpeeds(distances, speeds));
 
     }
-
-
-
-    public static void main (String [] args) {
-        CompetitionFloydWarshall floyd = new CompetitionFloydWarshall("tinyEWD.txt", 80, 50, 70);
-        System.out.println(floyd.timeRequiredforCompetition());
-    }
-
 }

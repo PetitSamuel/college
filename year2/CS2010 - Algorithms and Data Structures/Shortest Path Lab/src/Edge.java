@@ -19,9 +19,6 @@ public class Edge implements Comparable<Edge> {
     public double distance() {
         return distance;
     }
-    public String toString() {
-        return from + "->" + to + " " + String.format("%5.2f", distance);
-    }
 
     // enables use of priority queue (used after computing all shortest paths)
     @Override

@@ -28,10 +28,8 @@ public class Dijkstra {
                 if (distTo[w] > distTo[v] + e.distance()) {
                     distTo[w] = distTo[v] + e.distance();
                     edgeTo[w] = e;
-                    if (pq.contains(w)) {
-                        pq.remove(e);
-                        pq.add(new Edge(this.from, e.to(), distTo[w]));
-                    } else pq.add(new Edge(e.from(), e.to(), distTo[w]));
+                    pq.remove(e);
+                    pq.add(new Edge(e.from(), e.to(), distTo[w]));
                 }
             }
         }
