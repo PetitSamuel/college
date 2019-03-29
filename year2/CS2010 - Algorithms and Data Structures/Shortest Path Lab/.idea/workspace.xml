@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e776d5e1-c1a7-4057-a1d8-177c7906cb6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/CompetitionDijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionDijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionFloydWarshall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CompetitionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SPv3.zip" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+            <state relative-caret-position="60">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="e#0#1526#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -241,7 +237,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553869840697" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553869849298" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -361,7 +357,7 @@
       <option name="presentableId" value="Default" />
       <updated>1553704876698</updated>
       <workItem from="1553704880274" duration="13055000" />
-      <workItem from="1553779030230" duration="19946000" />
+      <workItem from="1553779030230" duration="20696000" />
     </task>
     <servers />
   </component>
@@ -398,7 +394,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33001000" />
+    <option name="totallyTimeSpent" value="33751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -577,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="87" column="9" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+        <state relative-caret-position="60">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="e#0#1526#0" expanded="true" />
             <element signature="imports" expanded="true" />
