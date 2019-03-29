@@ -40,10 +40,6 @@ struct cpu *c = cpus;
 // +++++++ ONLY MODIFY BELOW THIS LINE ++++++++++++++++++++++++++++++
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// declaring counts array
-int counts[NPROC];
-int start;
-
 void
 scheduler(void)
 { int runnableFound; // DO NOT MODIFY/DELETE
@@ -53,11 +49,9 @@ scheduler(void)
   runnableFound = 1 ; // force one pass over ptable
 
   // make sure to initialise array
-  if (!start) {
-    start = 1;
-    for(int i = 0; i < NPROC; i++) {
-      counts[i] = 0;
-    }
+  int counts[NPROC];
+  for(int i = 0; i < NPROC; i++) {
+    counts[i] = 0;
   }
 
   while(runnableFound){ // DO NOT MODIFY
@@ -67,26 +61,24 @@ scheduler(void)
     // Loop over process table looking for process to run.
     // acquire(&ptable.lock);
     // maximum integer possible
-    int min = 2147483647;
-    int index = 0;
-
+    int min = 0;
+    int i = 0;
     // go through runnable processes
-    for(int i = 0;  i < NPROC; i++) {
-       if(ptable.proc[i].state != RUNNABLE)
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++, i++) {
+       if(p->state != RUNNABLE)
             continue;
 
+        runnableFound = 1;
         // find the index that has been run the less times
-        if(counts[i]  < min) {
-            runnableFound = 1;
-            min = counts[i];
-            index = i;
+        if(counts[i]  < counts[min]) {
+            min = i;
         }
     }
     // if we found something to run : 
     if(runnableFound) {
       // increment & get the process
-      counts[index]++;
-      p = &ptable.proc[index];
+      counts[min]++;
+      p = &ptable.proc[min];
 
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
