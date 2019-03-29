@@ -13,6 +13,9 @@ public class Processor {
         double totalTime = 0;
         // allocate the smallest distance to the person walking the slowest
         for (int i = 0; i < 3; i++) {
+            if (speeds[i] < 50 || speeds[i] > 100) {
+                return  - 1;
+            }
             totalTime += distances[i] / (speeds[i] * 0.001);
         }
 

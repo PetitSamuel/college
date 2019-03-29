@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Graph {
     private final int vertex;
     public int edges;
@@ -7,7 +8,7 @@ public class Graph {
     public Graph(int vertex) {
         this.vertex = vertex;
         this.edges = 0;
-        this.adj = (ArrayList<Edge>[]) new ArrayList[vertex];
+        this.adj = (ArrayList<Edge>[])new ArrayList[vertex];
         for (int v = 0; v < vertex; v++)
             this.adj[v] = new ArrayList<Edge>();
     }

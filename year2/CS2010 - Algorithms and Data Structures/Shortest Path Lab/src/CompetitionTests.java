@@ -89,7 +89,7 @@ public class CompetitionTests {
         ExpectedException exception = ExpectedException.none();
         exception.expect(Exception.class);
         exception.expectMessage("File is not structured as expected, error when parsing data from file.");
-        new CompetitionDijkstra(new Scanner(" "), 50, 50, 50);
+        new CompetitionDijkstra(50, 50, 50, new Scanner(" "));
 
     }
 
@@ -123,7 +123,7 @@ public class CompetitionTests {
         ExpectedException exception = ExpectedException.none();
         exception.expect(Exception.class);
         exception.expectMessage("File is not structured as expected, error when parsing data from file.");
-        new CompetitionFloydWarshall(new Scanner(" "), 50, 50, 50);
+        new CompetitionFloydWarshall(50, 50, 50, new Scanner(" "));
 
     }
 
@@ -150,21 +150,23 @@ public class CompetitionTests {
     }
     @Test
     public void testDijkstraTimeRequiredforCompetitionNoMeetingPoints() {
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra(new Scanner("8\n" +
-                "2\n" +
-                "0 1 0.35\n" +
-                "3 2 0.32\n"),
-                100, 100, 100);
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra(
+                100, 100, 100,
+                new Scanner("8\n" +
+                        "2\n" +
+                        "0 1 0.35\n" +
+                        "3 2 0.32\n"));
         assertEquals(-1, dijkstra.timeRequiredforCompetition());
 
     }
     @Test
     public void testFloydTimeTimeRequiredforCompetitionNoMeetingPoints() {
-        CompetitionFloydWarshall floyd = new CompetitionFloydWarshall(new Scanner("8\n" +
-                "2\n" +
-                "0 1 0.35\n" +
-                "3 2 0.32\n"),
-                100, 100, 100);
+        CompetitionFloydWarshall floyd = new CompetitionFloydWarshall(
+                100, 100, 100,
+                new Scanner("8\n" +
+                        "2\n" +
+                        "0 1 0.35\n" +
+                        "3 2 0.32\n"));
         assertEquals(-1, floyd.timeRequiredforCompetition());
 
     }

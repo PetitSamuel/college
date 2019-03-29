@@ -54,7 +54,7 @@ public class CompetitionFloydWarshall {
     }
 
     // from scanner
-    CompetitionFloydWarshall (Scanner scan, int sA, int sB, int sC) {
+    CompetitionFloydWarshall (int sA, int sB, int sC, Scanner scan) {
         this.sA = sA;
         this.sB = sB;
         this.sC = sC;
@@ -83,6 +83,9 @@ public class CompetitionFloydWarshall {
      * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition() {
+        if (this.graph == null) {
+            return -1;
+        }
         FloydWarshall shortestPath = new FloydWarshall(this.graph);
         PriorityQueue<Edge> pq = new PriorityQueue<>();
 

@@ -54,7 +54,7 @@ public class CompetitionDijkstra {
     }
 
     // from scanner
-    CompetitionDijkstra (Scanner scan, int sA, int sB, int sC) {
+    CompetitionDijkstra (int sA, int sB, int sC, Scanner scan) {
         this.sA = sA;
         this.sB = sB;
         this.sC = sC;
@@ -83,6 +83,9 @@ public class CompetitionDijkstra {
     * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
+        if (this.graph == null) {
+            return -1;
+        }
         // compute shortest path on every single intersection and keep the edges & distances
         List<Dijkstra> dijkstras = new ArrayList<>();
         // priority queue of edges of these paths will help us find the best intersection to go to
