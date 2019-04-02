@@ -89,7 +89,7 @@ public class CompetitionDijkstra {
         // compute shortest path on every single intersection and keep the edges & distances
         List<Dijkstra> dijkstras = new ArrayList<>();
         // priority queue of edges of these paths will help us find the best intersection to go to
-        PriorityQueue<Edge> pq = new PriorityQueue<>();
+        PriorityQueue<Edge> pq = new PriorityQueue<>(this.graph.countVertices() * this.graph.countVertices(), Collections.reverseOrder());
         for (int i = 0; i < this.graph.countVertices(); i++) {
             Dijkstra path = new Dijkstra(this.graph, i);
             dijkstras.add(path);

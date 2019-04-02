@@ -139,7 +139,7 @@ public class CompetitionTests {
     @Test
     public void testDijkstraTimeRequiredforCompetition() {
         CompetitionDijkstra dijkstra = new CompetitionDijkstra("tinyEWD.txt", 100, 100, 100);
-        assertEquals(7, dijkstra.timeRequiredforCompetition());
+        assertEquals(54, dijkstra.timeRequiredforCompetition());
         assertEquals(15, dijkstra.graph.countEdges());
         dijkstra = new CompetitionDijkstra("tinyEWD.txt", 100, -10, 100);
         assertEquals(-1, dijkstra.timeRequiredforCompetition());
@@ -153,10 +153,16 @@ public class CompetitionTests {
         assertEquals(-1, dijkstra.timeRequiredforCompetition());
 
     }
+
+    @Test
+    public void testDijkstraTimeRequiredforCompetitionTEST() {
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("largeEWD.txt", 100, 100, 100);
+        assertEquals(54, dijkstra.timeRequiredforCompetition());
+    }
     @Test
     public void testFloydTimeRequiredforCompetition() {
         CompetitionFloydWarshall floyd = new CompetitionFloydWarshall("tinyEWD.txt", 100, 100, 100);
-        assertEquals(7, floyd.timeRequiredforCompetition());
+        assertEquals(54, floyd.timeRequiredforCompetition());
         floyd = new CompetitionFloydWarshall("tinyEWD.txt", 100, -10, 100);
         assertEquals(-1, floyd.timeRequiredforCompetition());
         floyd = new CompetitionFloydWarshall("tinyEWD.txt", 0, 0, 0);

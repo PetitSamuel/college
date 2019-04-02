@@ -87,7 +87,7 @@ public class CompetitionFloydWarshall {
             return -1;
         }
         FloydWarshall shortestPath = new FloydWarshall(this.graph);
-        PriorityQueue<Edge> pq = new PriorityQueue<>();
+        PriorityQueue<Edge> pq = new PriorityQueue<>(this.graph.countVertices() * this.graph.countVertices(), Collections.reverseOrder());
 
         for (int i = 0; i < shortestPath.distTo.length; i++) {
             for (int j = 0; j < shortestPath.distTo[i].length; j++) {
