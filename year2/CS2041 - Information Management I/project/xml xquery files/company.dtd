@@ -1,0 +1,22 @@
+<!DOCTYPE company [
+<!ELEMENT company (branch*)>
+<!ATTLIST company type CDATA #IMPLIED>
+<!ATTLIST company name CDATA #IMPLIED>
+<!ATTLIST company country CDATA #IMPLIED>
+<!ELEMENT branch (local_branch*)>
+<!ATTLIST branch county CDATA #IMPLIED>
+<!ELEMENT local_branch (branch_details,department+)>
+<!ATTLIST local_branch area CDATA #IMPLIED>
+<!ELEMENT branch_details (address,phone,email,manager)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT manager (#PCDATA)>
+<!ELEMENT department (employee*)>
+<!ATTLIST department name CDATA #IMPLIED>
+<!ELEMENT employee (firstname,lastname,title)>
+<!ELEMENT firstname (#PCDATA)>
+<!ELEMENT lastname (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+
+]>

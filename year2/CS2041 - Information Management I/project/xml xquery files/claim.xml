@@ -1,0 +1,18 @@
+<?xmlversion = "1.0"?>
+<!DOCTYPE claim SYSTEM "claim.dtd">
+<claim type ="3">
+  <privateInformation>
+    <name> Crash </name>
+    <synopsis>
+      "Third party driver drove into the 
+      back of claimant's vehicle on the 3rd November"</synopsis>
+      <driverName>
+        <title>Mr.</title>
+        <firstName>John</firstName>
+        <surname>Doe</surname>
+      </driverName>
+      <driverID>1234567</driverID>
+      <thirdPartyInsurer>AXA</thirdPartyInsurer>
+  </privateInformation>
+</claim>
+

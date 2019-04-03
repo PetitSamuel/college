@@ -1,0 +1,25 @@
+
+<!DOCTYPE Policy [
+<!ELEMENT policy (customer*)>
+<!ATTLIST policy type CDATA #IMPLIED>
+
+<!ELEMENT customer(personalInfo,contactDetails,policyInfo)>
+<!ATTLIST customer idNumber CDATA #IMPLIED>
+
+<!ELEMENT personalInfo(firstName,lastName,DOB,penaltyPoints)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT DOB (#PCDATA)>
+<!ELEMENT penaltyPoint (#PCDATA)>
+
+<!ELEMENT contactDetails(phoneNumber,email)>
+<!ELEMENT phoneNumber(#PCDATA)>
+<!ELEMENT email(#PCDATA)>
+
+<!ELEMENT policyInfo (cover,startDate,endDate)>
+<!ATTLIST policyInfo id CDATA #IMPLIED>
+<!ELEMENT cover (#PCDATA)>
+<!ELEMENT startDate (#PCDATA)>
+<!ELEMENT endDate (#PCDATA)>
+
+]>

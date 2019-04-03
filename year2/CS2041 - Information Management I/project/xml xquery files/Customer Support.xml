@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE CustomerSupport SYSTEM "CustomerSupport.dtd">
+<CustomerSupport insuranceCompany="AXA">
+  <employee>
+	  <employee.personalInfo>
+		<employee.firstName>John</employee.firstName>
+		<employee.lastName>Smith</employee.lastName>
+		<employee.DOB>05/06/1973</employee.DOB>
+	  </employee.personalInfo>
+	  <employee.contactDetails> 
+		  <employee.phoneNumber>123456789</employee.phoneNumber>
+		  <employee.email>johnsmith@gmail.com</employee.email>
+	  </employee.contactDetails>
+	  <employee.businessRecord> 
+		  <employee.speciality> Handling angry customers </employee.speciality>
+		  <employee.dateJoined> 10/11/2018 </employee.dateJoined>
+		  <employee.remarks> vegetarian </employee.remarks>
+	  </employee.businessRecord>
+  </employee> 
+  <query criteria="policy enquiry">
+	<customer>
+	    <customer.personaInfo>
+    		<customer.firstName>Nicola</customer.firstName>
+    		<customer.lastName>Barry</customer.lastName>
+    		<customer.DOB> 05/06/1973 </customer.DOB>
+	    </customer.personaInfo>
+	  <customer.history noClaimsBonus="no">
+		<customer.previousQuerys>
+			<customer.previousQuerys.date> asd</customer.previousQuerys.date>
+			<customer.previousQuerys.notes> asda</customer.previousQuerys.notes>
+			<customer.previousQuerys.resolution>asd </customer.previousQuerys.resolution>
+		</customer.previousQuerys>
+		<customer.plan>
+			<customer.plan.type>asd </customer.plan.type>
+			<customer.plan.expiry> </customer.plan.expiry>
+		</customer.plan>
+	 </customer.history>
+	</customer>
+  </query>
+</CustomerSupport>

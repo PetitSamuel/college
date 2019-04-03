@@ -1,0 +1,28 @@
+﻿<!DOCTYPE quoteSystem [
+
+<!ELEMENT quoteSystem (website,input*)>
+
+<!ELEMENT website (#PCDATA)>
+
+<!ELEMENT input (vehicle,registration,driver*)>
+
+<!ELEMENT vehicle (#PCDATA)>
+
+<!ELEMENT registration (#PCDATA)>
+
+<!ELEMENT driver (name*,dateOfBirth,firstReceivedLicense)>
+
+<!ELEMENT name (title, firstName, surname)>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT firstName (#PCDATA)>
+
+<!ELEMENT surname (#PCDATA)>
+
+<!ELEMENT dateOfBirth (#PCDATA)>
+
+<!ELEMENT firstReceivedLicense (#PCDATA)>
+
+]>
+

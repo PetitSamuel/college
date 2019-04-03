@@ -1,0 +1,20 @@
+<!ELEMENT Driver (person*)>
+<!-- there can be none, one, or multiple drivers in the class -->
+
+<!ELEMENT person (personalInfo,penaltyPoints,contactDetails)>
+<!ATTLIST person age CDATA #IMPLIED>
+<!ATTLIST Driver idNumber CDATA #IMPLIED>
+
+<!ELEMENT personalInfo (firstName,lastName,DOB)>
+<!-- a driver has to provide one and only one value for each -->
+<!ELEMENT penaltyPoints (#PCDATA)>
+
+<!ELEMENT contactDetails (phoneNumber+,email+)>
+<!-- a driver has to provide one phone number, but may provide more, same for the email -->
+
+<!--  every driver has a first name, last name, date of birth (DOB), a phone number & email -->
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT DOB (#PCDATA)>
+<!ELEMENT phoneNumber (#PCDATA)>
+<!ELEMENT email (#PCDATA)>

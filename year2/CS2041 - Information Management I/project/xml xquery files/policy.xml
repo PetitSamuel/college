@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE Policy SYSTEM "policyDTD.dtd"> 
+
+  <policy type="car insurance">
+    <customer idNumber="1234567">
+      <personalInfo>
+        <firstName>John</firstName>
+        <lastName>Doe</lastName>  
+        <DOB>1973-05-06</DOB>
+        <penaltyPoints>69</penaltyPoints>
+      </personalInfo>
+      <contactDetails>
+        <phoneNumber>123456789</phoneNumber>
+        <email>johndoe@gmail.com</email>
+      </contactDetails>
+      <policyInfo id="5989">
+        <cover>third party</cover>
+        <startDate>2018-11-15</startDate>
+        <endDate>2019-11-19</endDate>
+      </policyInfo>
+    </customer> 
+  </policy>
+
+
+
+
+    
+

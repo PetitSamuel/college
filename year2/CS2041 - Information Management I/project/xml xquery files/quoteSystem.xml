@@ -1,0 +1,19 @@
+<?xmlversion = "1.0"?>
+<!DOCTYPE quoteSystem SYSTEM "quoteSystem.dtd">
+<quoteSystem>
+  <website>"https://www.axa.ie"</website>
+  <input>
+    <vehicle>"Opel Corsa"</vehicle>
+    <registration>"03-D-3434"</registration>
+    <driver>
+      <name>
+        <title>Mr.</title>
+        <firstName>John</firstName>
+        <surname>Doe</surname>
+      </name>
+      <dateOfBirth>01/01/1996</dateOfBirth>
+      <firstReceivedLicense>04/12/2017</firstReceivedLicense>
+    </driver>
+  </input>
+</quoteSystem> 
+

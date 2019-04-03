@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE Driver SYSTEM "driver.dtd">
+<Driver idNumber='1234567'>
+  <person age='45'>
+	  <personalInfo>
+		<firstName>John</firstName>
+		<lastName>Doe</lastName>
+		<DOB>05/06/1973</DOB>
+	  </personalInfo>
+	  <penaltyPoints>69</penaltyPoints>
+	  <contactDetails> 
+		  <phoneNumber>123456789</phoneNumber>
+		  <email>johndoe@gmail.com</email>
+	  </contactDetails>
+  </person> 
+</Driver>

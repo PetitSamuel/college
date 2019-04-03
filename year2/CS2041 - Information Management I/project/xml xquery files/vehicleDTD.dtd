@@ -1,0 +1,29 @@
+<!-- Defines the Vehicle element-->
+<!DOCTYPE Vehicle [
+<!ELEMENT Vehicle (Owner*, Dealer, brand, colour+, model, year, registration)>
+<!-- a vehicle has one single brand, name (model), year and registration and is bought from one dealer, it can however have multiple owners/drivers & multiple colours -->
+<!ATTLIST Vehicle id CDATA #IMPLIED>
+<!-- we give each vehicle an id in our database -->
+
+<!ELEMENT Owner (Driver)>
+<!-- The owner element is imported from the driver.dtd, so the same attributes/elements are used -->
+
+<!ELEMENT Dealer (Name, Address, phone+)>
+<!ATTLIST Dealer id CDATA #IMPLIED>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!-- elements /attributes for  the dealer: ever dealer has an id (in our DB) & every single one of its elements is unique (name, address).-->
+<!--  It can however have multiple phone numbers -->
+
+
+<!ENTITY % driver SYSTEM "driver.dtd">
+%driver;
+
+<!ELEMENT brand (#PCDATA)>
+<!ELEMENT colour (#PCDATA)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT registration (#PCDATA)>
+<!-- defining the rest of the elements used for a vehicle : brand, model, year, registration, colour -->
+]>

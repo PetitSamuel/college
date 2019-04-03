@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<company type="Insurance" name="AXA" country="Ireland">
+   <branch county="Dublin">
+      <local_branch area="City Centre">
+        <branch_details>
+           <address>Wolfe Tone House Wolfe Tone Street Dublin 1</address>
+           <phone>01 872 6444</phone>
+           <email>axa.dublincity@axa.ie</email>
+           <manager>Mark Shields</manager>
+        </branch_details>
+        <department name="Car Insurance">
+           <employee> 
+              <firstname>John</firstname>
+              <lastname>Smith</lastname>
+              <title>Customer Support Manager</title>
+           </employee>
+           <employee>
+              <firstname>Connail</firstname>
+              <lastname>O'Donnell</lastname>
+              <title>Receptionist</title>
+           </employee>
+        </department>
+      </local_branch>
+      <local_branch area="Blanchardstown">
+         <branch_details> 
+            <address>Unit 4, Blanchardstown Plaza,Main Street</address>
+            <phone>01 8179733</phone>
+            <email>axa.blanchardstown@axa.ie</email>
+            <manager>Tony Higgins</manager>
+         </branch_details>
+         <department name="Car Insurance">
+            <employee>
+              <firstname>Nicole</firstname>
+              <lastname>Smith</lastname>
+              <title>Department Manager</title>
+            </employee>
+         </department>
+      </local_branch>
+   </branch>
+</company>
+   
+ 
+ 
+ 

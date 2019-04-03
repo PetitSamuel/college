@@ -1,0 +1,26 @@
+﻿<!DOCTYPE claim [
+
+<!ELEMENT claim (type,privateInformation*)>
+
+<!ELEMENT claim type CDATA #REQUIRED
+
+<!ELEMENT privateInformation (name,synopsis,driverName*,driverID,thirdPartyInsurer)>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT synopsis (#PCDATA)>
+
+<!ELEMENT driverName ( title,firstName,surname)>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT firstName (#PCDATA)>
+
+<!ELEMENT surname (#PCDATA)>
+
+<!ELEMENT driverID (ID)>
+
+<!ELEMENT thirdPartyInsurer (#PCDATA)>
+
+]>
+

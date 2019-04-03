@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE Vehicle SYSTEM "vehicleDTD.dtd">
+
+<Vehicle id="50">
+    <Owner>
+        <Driver idNumber="233">
+            <person age='38'>
+                <personalInfo>
+                    <firstName> Eve </firstName>
+                    <lastName> McDonald </lastName>
+                    <DOB> 10/10/1980 </DOB>
+                </personalInfo>
+                <penaltyPoints> 75 </penaltyPoints>
+                <contactDetails>
+                    <phoneNumber> 0872661773 </phoneNumber>
+                    <email> eve-mcdonald@gmail.com </email>
+                </contactDetails>
+        </person>
+        </Driver>
+    </Owner>
+    <Owner>
+        <Driver idNumber="40">
+            <person age='33'>
+                <personalInfo>
+                    <firstName> Mike </firstName>
+                    <lastName> McDonald </lastName>
+                    <DOB> 05/05/1985 </DOB>
+                </personalInfo>
+                <penaltyPoints> 20 </penaltyPoints>
+                <contactDetails>
+                    <phoneNumber> 07221188227 </phoneNumber>
+                    <email> mike-mcdonald@gmail.com </email>
+                </contactDetails>
+            </person>
+        </Driver>
+    </Owner>
+
+    <Dealer id="124">
+    <Name> Fred's Auto Shop</Name>
+    <Address> 15 Dame Street, Dublin</Address>
+    <phone> 0812049281</phone>
+    </Dealer>
+
+    <brand> Peugeot </brand>
+    <model> 206 </model>
+    <year> 2010 </year>
+    <registration> 99-D-123456 </registration>
+</Vehicle>

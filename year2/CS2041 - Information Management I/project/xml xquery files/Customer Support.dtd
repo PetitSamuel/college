@@ -1,0 +1,37 @@
+
+<!ELEMENT CustomerSupport (employee,query)>
+<!ELEMENT employee (employee.personalInfo,employee.contactDetails,
+                    employee.businessRecord)>
+<!ELEMENT query (customer)>
+<!ATTLIST query criteria CDATA #IMPLIED>
+<!ELEMENT employee.personalInfo (employee.firstName,employee.lastName,
+                                 employee.DOB)>
+<!ELEMENT employee.contactDetails (employee.phoneNumber,employee.email)>
+<!ELEMENT employee.businessRecord (employee.speciality,
+                                   employee.dateJoined,
+                                   employee.remarks)>
+<!ELEMENT customer (customer.personaInfo,customer.history)>
+<!ELEMENT employee.firstName (#PCDATA)>
+<!ELEMENT employee.lastName (#PCDATA)>
+<!ELEMENT employee.DOB (#PCDATA)>
+<!ELEMENT employee.phoneNumber (#PCDATA)>
+<!ELEMENT employee.email (#PCDATA)>
+<!ELEMENT employee.speciality (#PCDATA)>
+<!ELEMENT employee.dateJoined (#PCDATA)>
+<!ELEMENT employee.remarks (#PCDATA)>
+<!ELEMENT customer.personaInfo (customer.firstName,customer.lastName,
+                                customer.DOB)>
+<!ELEMENT customer.history (customer.previousQuerys,customer.plan)>
+<!ELEMENT customer.firstName (#PCDATA)>
+<!ELEMENT customer.lastName (#PCDATA)>
+<!ELEMENT customer.DOB (#PCDATA)>
+<!ELEMENT customer.previousQuerys (customer.previousQuerys.date,
+                                   customer.previousQuerys.notes,
+                                   customer.previousQuerys.resolution)>
+<!ELEMENT customer.plan (customer.plan.type,customer.plan.expiry)>
+<!ELEMENT customer.previousQuerys.date (#PCDATA)>
+<!ELEMENT customer.previousQuerys.notes (#PCDATA)>
+<!ELEMENT customer.previousQuerys.resolution (#PCDATA)>
+<!ELEMENT customer.plan.type (#PCDATA)>
+<!ELEMENT customer.plan.expiry EMPTY>
+
