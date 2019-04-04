@@ -83,36 +83,33 @@ public class CompetitionFloydWarshall {
      * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition() {
-        if (this.graph == null) {
+        if (this.graph == null || this.graph.countVertices() < 1) {
             return -1;
         }
         FloydWarshall shortestPath = new FloydWarshall(this.graph);
-        PriorityQueue<Edge> pq = new PriorityQueue<>(this.graph.countVertices() * this.graph.countVertices(), Collections.reverseOrder());
-
+        PriorityQueue<Edge> pq = new PriorityQueue<>(2);
+        boolean first = true;
         for (int i = 0; i < shortestPath.distTo.length; i++) {
             for (int j = 0; j < shortestPath.distTo[i].length; j++) {
-                if (shortestPath.distTo[i][j] != Double.MAX_VALUE) {
+                if (shortestPath.distTo[i][j] == Double.MAX_VALUE) {
+                    return -1;
+                }
+                if (shortestPath.distTo[i][j] != Double.MAX_VALUE && i != j) {
                     pq.add(new Edge(i, j, shortestPath.distTo[i][j]));
+                    if (first) {
+                        first = false;
+                    } else {
+                        pq.remove();
+                    }
                 }
             }
         }
 
         Processor computeBestOption = new Processor(pq);
-        HashMap<Integer, List<Integer>> foundPath = computeBestOption.foundPath;
-        int dir = computeBestOption.finalVertex;
 
-        List<Integer> list = foundPath.get(dir);
-
-        if (list.size() != 3) {
-            return -1;
-        }
-        double[] distances = new double[3];
-        for (int i = 0; i < list.size(); i++) {
-            distances[i] = shortestPath.distTo[list.get(i)][dir];
-        }
-
+        double distance = computeBestOption.weight;
         int[] speeds = {this.sA, this.sB, this.sC};
-        return (int) Math.ceil(Processor.getSpeeds(distances, speeds));
+        return (int) Math.ceil(Processor.getSpeeds(distance, speeds));
 
     }
 }

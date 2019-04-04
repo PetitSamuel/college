@@ -83,42 +83,37 @@ public class CompetitionDijkstra {
     * @return int: minimum minutes that will pass before the three contestants can meet
      */
     public int timeRequiredforCompetition(){
-        if (this.graph == null) {
+        if (this.graph == null || this.graph.countVertices() < 1) {
             return -1;
         }
+        boolean first = true;
         // compute shortest path on every single intersection and keep the edges & distances
-        List<Dijkstra> dijkstras = new ArrayList<>();
-        // priority queue of edges of these paths will help us find the best intersection to go to
-        PriorityQueue<Edge> pq = new PriorityQueue<>(this.graph.countVertices() * this.graph.countVertices(), Collections.reverseOrder());
+        // priority queue of edges of these paths will help us find the worst intersection to go to
+        PriorityQueue<Edge> pq = new PriorityQueue<>(2);
         for (int i = 0; i < this.graph.countVertices(); i++) {
             Dijkstra path = new Dijkstra(this.graph, i);
-            dijkstras.add(path);
             double[] current = path.distTo;
             for(int j = 0; j < current.length; j++) {
                 // add all paths in a priority queue
-                if (current[j] != Double.MAX_VALUE) {
+                if (current[j] == Double.MAX_VALUE) {
+                    return -1;
+                }
+                if (current[j] != Double.MAX_VALUE && i != j) {
                     pq.add(new Edge(i, j, current[j]));
+                    if (!first) {
+                        pq.remove();
+                    } else {
+                        first = false;
+                    }
                 }
             }
         }
 
 
         Processor computeBestOption = new Processor(pq);
-        HashMap<Integer, List<Integer>> shortestPath = computeBestOption.foundPath;
-        int directionVertex = computeBestOption.finalVertex;
-
-        List<Integer> list = shortestPath.get(directionVertex);
-        // get list of distances to get from selected intersection to final intersection
-        if (list.size() != 3) {
-            return -1;
-        }
-
-        double[] distances = new double[3];
-        for (int i = 0; i < list.size(); i++) {
-            distances[i] = dijkstras.get(list.get(i)).distTo[directionVertex];
-        }
+        double distance = computeBestOption.weight;
 
         int[] speeds = {this.sA, this.sB, this.sC};
-        return (int) Math.ceil(Processor.getSpeeds(distances, speeds));
+        return (int) Math.ceil(Processor.getSpeeds(distance, speeds));
     }
 }

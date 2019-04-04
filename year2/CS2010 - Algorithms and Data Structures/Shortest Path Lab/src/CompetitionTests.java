@@ -11,17 +11,13 @@ the source and destination as well as the distance (weight) for the edge. It is 
 compareTo method which is based on the distance of an edge so that I can be used properly inside the priority queue.
 
 After a list of shortest paths is calculated for a specific source node, I add all of those distances inside another priority queue of edges
+It is useful to note that the queue only contains 2 of those edges at once since we are only interested in the longest distance, we do not need
+to keep track of the other ones which we can disregard
 we will use this queue later for finding the ideal positions and destination nodes.
 The idea is that the distances from a specific node to another one should be considered from lowest distance to biggest, and the
-first "destination intersection" that has 3 different paths going there is effectively the best set of starting points and finishing points.
+longest distance in the priority queue is the the longest possible time to complete a game.
 
-It is pretty obvious here that a priority queue of edges is useful so that we can start with the smallest distances first and then progressively
-make our way to bigger distances.
-The way I keep track of the starting points and finishing points for all of these is with a Hashmap, the key is an integer which represents the
-destination intersection and the body is a list of integers representing the sources intersections.
-
-The first destination that has a list of 3 sources is then effectively the best set of starting points and ending points for the given graph.
-We then assign the longest distance to the fastest walkers and compute the minimum time required.
+We then assign the longest distance to the slowest walker and compute the minimum time required.
 
 FloydWarshall:
 It uses exactly the same procedure as described above expect that the list of distances and edges are stored in a matrix rather than an adjacency list
@@ -138,8 +134,8 @@ public class CompetitionTests {
     }
     @Test
     public void testDijkstraTimeRequiredforCompetition() {
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra("tinyEWD.txt", 100, 100, 100);
-        assertEquals(54, dijkstra.timeRequiredforCompetition());
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("tinyEWD.txt", 99, 99, 99);
+        assertEquals(19, dijkstra.timeRequiredforCompetition());
         assertEquals(15, dijkstra.graph.countEdges());
         dijkstra = new CompetitionDijkstra("tinyEWD.txt", 100, -10, 100);
         assertEquals(-1, dijkstra.timeRequiredforCompetition());
@@ -153,12 +149,17 @@ public class CompetitionTests {
         assertEquals(-1, dijkstra.timeRequiredforCompetition());
 
     }
+    @Test
+    public void testHugeFIle() {
+        CompetitionDijkstra dijkstra = new CompetitionDijkstra("largeEWD.txt", 99, 99, 99);
+        assertEquals(19, dijkstra.timeRequiredforCompetition());
 
+    }
     @Test
     public void testFloydTimeRequiredforCompetition() {
-        CompetitionFloydWarshall floyd = new CompetitionFloydWarshall("tinyEWD.txt", 100, 100, 100);
-        assertEquals(54, floyd.timeRequiredforCompetition());
-        floyd = new CompetitionFloydWarshall("tinyEWD.txt", 100, -10, 100);
+        CompetitionFloydWarshall floyd = new CompetitionFloydWarshall("tinyEWD.txt", 60, 80, 85);
+        assertEquals(32, floyd.timeRequiredforCompetition());
+        floyd = new CompetitionFloydWarshall("tinyEWD.txt", 99, -10, 99);
         assertEquals(-1, floyd.timeRequiredforCompetition());
         floyd = new CompetitionFloydWarshall("tinyEWD.txt", 0, 0, 0);
         assertEquals(-1, floyd.timeRequiredforCompetition());
@@ -172,6 +173,11 @@ public class CompetitionTests {
     @Test
     public void testDijkstraTimeRequiredforCompetitionNoMeetingPoints() {
         CompetitionDijkstra dijkstra = new CompetitionDijkstra(
+                100, 100, 100,
+                new Scanner("8\n" +
+                        "2\n"));
+        assertEquals(-1, dijkstra.timeRequiredforCompetition());
+        dijkstra = new CompetitionDijkstra(
                 100, 100, 100,
                 new Scanner("8\n" +
                         "2\n" +
@@ -188,6 +194,11 @@ public class CompetitionTests {
                         "2\n" +
                         "0 1 0.35\n" +
                         "3 2 0.32\n"));
+        assertEquals(-1, floyd.timeRequiredforCompetition());
+        floyd = new CompetitionFloydWarshall(
+                100, 100, 100,
+                new Scanner("8\n" +
+                        "2\n"));
         assertEquals(-1, floyd.timeRequiredforCompetition());
 
     }
