@@ -1,0 +1,34 @@
+echo "ANALYSIS STARTS"
+rm *.trail
+
+echo "SIMULATE 100 STEPS"
+spin -u100 dphil.pml
+
+echo ""
+
+echo "COMPILE VERIFIER"
+# script to generate executable 'pan'
+spin -a dphil.pml
+cc -o pan pan.c
+echo ""
+
+echo "STANDARD VERIFICATION"
+#script to do verification and observe trail if errors occur
+echo "Executing program with standart verification"
+./pan
+echo "Printing trail output"
+cat dphil.pml.trail
+echo ""
+
+echo "PROGRESS VERIFICATION"
+# script to do verification and observe trail if errors occur
+echo "Recompiling with adequate verification"
+cc -DNP -o pan pan.c
+echo "Emptying previous trail file"
+echo "" > dphil.pml.trail
+./pan -l
+cat dphil.pml.trail
+
+
+echo ""
+echo "ANALYSIS COMPLETE"
