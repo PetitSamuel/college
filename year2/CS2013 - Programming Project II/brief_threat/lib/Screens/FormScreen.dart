@@ -100,13 +100,6 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
     super.dispose();
   }
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed && prefs.getBool("isBiometricsEnabled")) {
-      _biometricAuth();
-    }
-  }
-
   // build main page (page view), and include both screens
   @override
   Widget build(BuildContext context) {
@@ -197,7 +190,7 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
     return Scaffold(
       key: _formKey,
       appBar: AppBar(
-        title: Text('Transaction Details'),
+        title: Text('Transaction Details', key: Key('title'),),
         automaticallyImplyLeading: false,
         actions: <Widget>[
           PopupMenuButton<barButtonOptions>(
@@ -230,6 +223,7 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
                   ),
                   SizedBox(height: 12.0),
                   TextField(
+                    key: Key('customer username'),
                     decoration: InputDecoration(
                       labelText: "Customer Username",
                       filled: true,
@@ -238,6 +232,7 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
                   ),
                   SizedBox(height: 12.0),       
                   TextField(
+                    key: Key('course'),
                     decoration: InputDecoration(
                       labelText: "Course",
                       filled: true,
@@ -315,7 +310,12 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
                           _amount =_amountController.text.trim();
                           _receipt =_receiptController.text.trim();
                           double _amountValue = Verification.checkForMoneyAmountInput(_amount);
-                          
+
+                          if (prefs.getBool("isBiometricsEnabled") && !await _biometricAuth()) {
+                            SnackBarController.showSnackBarErrorMessage(_formKey, "Failed to verify");
+                            return;
+                          }
+
                           // on error, the string contains the message to display. Null on success
                           String printErrorMessage = Verification.validateFormSubmission(_user, _repName, _course, _amount, _amountValue, _receipt, _date);
                           if (printErrorMessage != null) {
@@ -483,7 +483,7 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
     Navigator.of(context).pop();
   }
 
-  // show dialog used for successfull form submission
+  // show dialog used for successful form submission
   void _showDialog(int id) {
     showDialog(
       context: context,
@@ -567,13 +567,11 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
     );
   }
 
-  void _biometricAuth () async {
+  Future<bool> _biometricAuth () async {
     var localAuth = LocalAuthentication();
     bool didAuthenticate = await localAuth.authenticateWithBiometrics(
         localizedReason: 'Please authenticate to Login', useErrorDialogs: false);
-    if (!didAuthenticate) {
-      _logout();
-    }
+    return didAuthenticate;
   }
 
   void _toggleBiometrics() {
@@ -582,7 +580,7 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
     if ( ( isOptionEnabled == null) || (isOptionEnabled == false)) {
       question = "Turn on Biometrics?";
     } else if (isOptionEnabled == true) {
-      question = "Turn off Biometrics?";
+      question = "Turn off Biometrics?\n(This will log you out)";
     }
     showDialog(
       context: context,
@@ -596,10 +594,12 @@ class _FormScreen extends State<FormScreen> with WidgetsBindingObserver {
               onPressed: () {
                 if (( isOptionEnabled == null) || (isOptionEnabled == false)) {
                   prefs.setBool("isBiometricsEnabled", true);
-                } else if (isOptionEnabled == true) {
+                  Navigator.of(context).pop();
+                } else {
                   prefs.setBool("isBiometricsEnabled", false);
+                  Navigator.of(context).pop();
+                  _logout();
                 }
-                Navigator.of(context).pop();
               },
             ),
             new FlatButton(
