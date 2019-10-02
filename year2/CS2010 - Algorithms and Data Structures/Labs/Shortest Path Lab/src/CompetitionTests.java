@@ -149,12 +149,7 @@ public class CompetitionTests {
         assertEquals(-1, dijkstra.timeRequiredforCompetition());
 
     }
-    @Test
-    public void testHugeFIle() {
-        CompetitionDijkstra dijkstra = new CompetitionDijkstra("largeEWD.txt", 99, 99, 99);
-        assertEquals(19, dijkstra.timeRequiredforCompetition());
 
-    }
     @Test
     public void testFloydTimeRequiredforCompetition() {
         CompetitionFloydWarshall floyd = new CompetitionFloydWarshall("tinyEWD.txt", 60, 80, 85);

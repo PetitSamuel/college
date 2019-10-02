@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e776d5e1-c1a7-4057-a1d8-177c7906cb6a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/CompetitionTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Shortest Path Lab/CompetitionTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Shortest Path Lab/META-INF/Shortest Path Lab.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CompetitionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CompetitionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorting Algorithms Lab/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorting Algorithms Lab/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorting Algorithms Lab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorting Algorithms Lab/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sorting Algorithms Lab/out/production/sort/SortComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Sorting Algorithms Lab/out/production/sort/SortComparison.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="975">
+              <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,10 +56,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompetitionTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="153" column="72" selection-start-line="153" selection-start-column="72" selection-end-line="153" selection-end-column="72" />
+            <state relative-caret-position="1365">
+              <caret line="148" column="64" selection-start-line="148" selection-start-column="64" selection-end-line="148" selection-end-column="64" />
               <folding>
-                <element signature="e#0#11684#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -68,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
+            <state relative-caret-position="540">
               <caret line="109" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -167,7 +173,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -189,10 +195,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
+    <option name="x" value="993" />
     <option name="y" value="25" />
     <option name="width" value="927" />
-    <option name="height" value="1055" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -200,6 +206,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -217,7 +224,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,14 +234,16 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554391937123" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556729691931" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
+    <property name="s101-autoBuild" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -262,7 +270,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CompetitionTests.testHugeFIle">
+  <component name="RunManager" selected="JUnit.CompetitionTests">
     <configuration name="floyd" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="CompetitionFloydWarshall" />
       <module name="Shortest Path Lab" />
@@ -329,8 +337,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CompetitionTests.testHugeFIle" />
         <item itemvalue="JUnit.CompetitionTests" />
+        <item itemvalue="JUnit.CompetitionTests.testHugeFIle" />
         <item itemvalue="JUnit.CompetitionTests.testDijkstraTimeRequiredforCompetitionTest" />
         <item itemvalue="JUnit.CompetitionTests.hugetest" />
         <item itemvalue="JUnit.CompetitionTests.testDijkstraTimeRequiredforCompetition" />
@@ -354,16 +362,19 @@
       <workItem from="1554299443388" duration="944000" />
       <workItem from="1554382500031" duration="5060000" />
       <workItem from="1554387613212" duration="3171000" />
+      <workItem from="1556729270708" duration="154000" />
+      <workItem from="1556729457081" duration="295000" />
+      <workItem from="1557242166582" duration="655000" />
+      <workItem from="1557243180166" duration="10000" />
+      <workItem from="1557244870851" duration="201000" />
+      <workItem from="1557245909684" duration="377000" />
+      <workItem from="1557247119970" duration="176000" />
+      <workItem from="1557247957388" duration="130000" />
+      <workItem from="1557248111520" duration="37000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CompetitionTests_hugetest - 2019.04.04 at 14h 54m 06s.xml">
-      <configuration name="CompetitionTests.hugetest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CompetitionTests_hugetest - 2019.04.04 at 15h 07m 47s.xml">
-      <configuration name="CompetitionTests.hugetest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CompetitionTests_testDijkstraTimeRequiredforCompetitionTest - 2019.04.04 at 15h 07m 52s.xml">
       <configuration name="CompetitionTests.testDijkstraTimeRequiredforCompetitionTest" configurationId="JUnit" />
     </history-entry>
@@ -388,15 +399,20 @@
     <history-entry file="CompetitionTests_testHugeFIle - 2019.04.04 at 17h 01m 19s.xml">
       <configuration name="CompetitionTests.testHugeFIle" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CompetitionTests - 2019.05.01 at 17h 51m 52s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CompetitionTests - 2019.05.01 at 17h 52m 11s.xml">
+      <configuration name="CompetitionTests" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45482000" />
+    <option name="totallyTimeSpent" value="47517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27891532" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23298284" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -405,7 +421,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44816414" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44816414" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -417,6 +433,11 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Flutter Performance" order="13" side_tool="true" />
+      <window_info anchor="bottom" id="Studio Architecture Diagrams" order="14" weight="0.32937366" />
+      <window_info anchor="bottom" id="Studio Actions" order="15" weight="0.32937366" />
+      <window_info anchor="bottom" id="Spec Violations" order="16" weight="0.32937366" />
+      <window_info anchor="bottom" id="Structural Issues" order="17" visible="true" weight="0.32829374" />
+      <window_info anchor="bottom" id="Studio AD Violations" order="18" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -429,6 +450,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Capture Analysis" order="10" />
       <window_info anchor="right" id="Coverage" order="11" side_tool="true" visible="true" weight="0.1444383" />
+      <window_info active="true" anchor="right" id="Structure Map" order="12" visible="true" weight="0.24571112" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,20 +536,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/largeEWD.txt" />
+    <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CompetitionTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="148" column="64" selection-start-line="148" selection-start-column="64" selection-end-line="148" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dijkstra.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -552,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tinyEWD.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Processor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -566,28 +592,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionTests.java">
+    <entry file="file://$PROJECT_DIR$/tinyEWD.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="153" column="72" selection-start-line="153" selection-start-column="72" selection-end-line="153" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#11684#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="8" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/largeEWD.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="315">
-          <caret line="174" column="24" lean-forward="true" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompetitionDijkstra.java">
+    <entry file="file://$PROJECT_DIR$/src/CompetitionFloydWarshall.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="540">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
