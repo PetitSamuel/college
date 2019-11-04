@@ -1,0 +1,9 @@
+{imgsize} {printToken("IMAGE W/H", yytext);}
+{imageName} {printToken("NAME", yytext);}
+{headerLine} {printToken("HEADER", yytext);}
+{fullLine} {
+    printToken("PIECE OF TEXT ", yytext);
+    yylval = (char*)malloc(sizeof(char)*strlen(yytext));strcpy(yylval, yytext);return PARAGRAPH;
+}
+{bold} {printToken("BOLD", "**");}
+{italic} {printToken("ITALIC", yytext);}

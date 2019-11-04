@@ -1,0 +1,61 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mini-Markdown Parser - Result Page</title>
+</head>
+<body>
+
+<p>Mini-Markdown is a subset of Markdown language. It translates the Mini-Markdown files into HTML files.</p>
+<p>1. Formated text: </p>
+<p>bold</p>
+<p> and </p>
+<p>italic</p>
+<p>2. image, for example: </p>
+<p>https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg</p>
+<p>3. headers in 1-6 levels1</p>
+<p>In general, Mini-Markdown parser works in line-mode, which means it parses the input file line by line.</p>
+<p>Each line of the input file will be translated into a paragraph in html.a</p>
+<p>There always an empty line in the end of each Mini-Markdown file. </p>
+<p>plain text contains a-z A-Z 0-9 , . - : '</p>
+<p>- bold: use 'two-star' text 'two-star' to bold text</p>
+<p>- italic: use 'underscore' text 'underscore' to italic text</p>
+<p>Note:    bold and italic can be applied to the Headers. bold and italic can be hybird.</p>
+<p>image test </p>
+<p>https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg</p>
+<p>:</p>
+<p>small:</p>
+<p>https://images.pexels.com/photos/1974627/pexels-photo-1974627.jpeg</p>
+<p>https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg</p>
+<p>medium:</p>
+<p>https://images.pexels.com/photos/1974627/pexels-photo-1974627.jpeg</p>
+<p>https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg</p>
+<p>large:</p>
+<p>https://images.pexels.com/photos/1974627/pexels-photo-1974627.jpeg</p>
+<p>https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg</p>
+<p>There are total 6 levels of headers: h1, h2, h3, h4, h5 and h6.</p>
+<p>headers are indicated by leading 'sharp's and folloed by a blank.</p>
+<p>The text part in headers contains rich-format text, this means the text of a head can be a image, bold text, italic text or mixed content.</p>
+<p>1234567890</p>
+<p>https://i.imgur.com/KmppDzf.png</p>
+<p>H3</p>
+<p>H4</p>
+<p>H5</p>
+<p>H6</p>
+<p>This is a bold H2</p>
+<p> with image: </p>
+<p>https://i.imgur.com/KmppDzf.png</p>
+<p>miniMD2html-example</p>
+<p> is an example parser binary. Your own parser is expected to generate the exactly same output as it.</p>
+<p>You can write your own Mini-Markdown files and compare the output of your own parser and the </p>
+<p>miniMD2html-example</p>
+<p>.</p>
+<p>Please see the assignment description file to find the BNF of Mini-Markdown</p>
+<p>Some functions are provided to help you generate HTML labels.</p>
+<p>Please read </p>
+<p>global.h</p>
+<p> and </p>
+<p>global.c</p>
+<p> to find more details.</p>
+
+</body>
+</html>

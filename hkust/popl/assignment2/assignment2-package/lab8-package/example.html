@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mini-Markdown Parser - Result Page</title>
+</head>
+<body>
+
+<h1>Mini-Markdown to HTML Parser</h1>
+<p>Mini-Markdown is a subset of Markdown language. It translates the Mini-Markdown files into HTML files.</p>
+<h2>Supported elements:</h2>
+<p>1. Formated text: <b>bold</b> and <i>italic</i></p>
+<p>2. image, for example: <img src="https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg" alt="image name" width="10" height="15"></p>
+<p>3. headers in 1-6 levels</p>
+<h2>How to parse Mini-Markdown file</h2>
+<p>In general, Mini-Markdown parser works in line-mode, which means it parses the input file line by line.</p>
+<p>Each line of the input file will be translated into a paragraph in html.</p>
+<p>There always an empty line in the end of each Mini-Markdown file.</p>
+<h2>Plain text</h2>
+<p>plain text contains a-z A-Z 0-9 , . - : '</p>
+<h2>Rich-format text</h2>
+<h3>Formated text</h3>
+<p>- bold: use 'two-star' text 'two-star' to bold text</p>
+<p>- italic: use 'underscore' text 'underscore' to italic text</p>
+<p>Note: bold and italic can be applied to the Headers. bold and italic can be hybird.</p>
+<h3>Image</h3>
+<p>image test <img src="https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg" alt="image name" width="10" height="10">:</p>
+<p>small:</p>
+<p><img src="https://images.pexels.com/photos/1974627/pexels-photo-1974627.jpeg" alt="img1" width="20" height="30"> <img src="https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg" alt="img2" width="20" height="30"></p>
+<p>medium:</p>
+<p><img src="https://images.pexels.com/photos/1974627/pexels-photo-1974627.jpeg" alt="img1" width="50" height="80"> <img src="https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg" alt="img2" width="50" height="80"></p>
+<p>large:</p>
+<p><img src="https://images.pexels.com/photos/1974627/pexels-photo-1974627.jpeg" alt="img1" width="100" height="150"> <img src="https://images.pexels.com/photos/1858161/pexels-photo-1858161.jpeg" alt="img2" width="100" height="150"></p>
+<h2>Headers</h2>
+<p>There are total 6 levels of headers: h1, h2, h3, h4, h5 and h6.</p>
+<p>headers are indicated by leading 'sharp's and folloed by a blank.</p>
+<p>The text part in headers contains rich-format text, this means the text of a head can be a image, bold text, italic text or mixed content.</p>
+<p>1234567890</p>
+<h1>H1</h1>
+<h2>H<img src="https://i.imgur.com/KmppDzf.png" alt="image name" width="25" height="25"></h2>
+<h3><b>H3</b></h3>
+<h4><i>H4</i></h4>
+<h5><b><i>H5</i></b></h5>
+<h6><i><b>H6</b></i></h6>
+<h2><b>This is a bold H2</b> with image: <img src="https://i.imgur.com/KmppDzf.png" alt="name" width="25" height="25"></h2>
+<h2>Example parser binary</h2>
+<p><i><b>miniMD2html-example</b></i> is an example parser binary. Your own parser is expected to generate the exactly same output as it.</p>
+<p>You can write your own Mini-Markdown files and compare the output of your own parser and the <i><b>miniMD2html-example</b></i>.</p>
+<h2>BNF of Mini-Markdown</h2>
+<p>Please see the assignment description file to find the BNF of Mini-Markdown</p>
+<h2>Extra notes</h2>
+<p>Some functions are provided to help you generate HTML labels.</p>
+<p>Please read <i>global.h</i> and <i>global.c</i> to find more details.</p>
+
+</body>
+</html>

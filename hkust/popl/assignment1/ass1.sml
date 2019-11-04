@@ -1,3 +1,5 @@
+(* Name : Samuel Petit, ITSC: saapetit, student number : 20683298 *)
+
 type matrix = real list list;
 
 (* Get the Ith value from a list *)
@@ -36,10 +38,18 @@ fun iterateBinarize([], _) = [] | iterateBinarize(h::t: matrix, value: real) = m
 
 fun MatBinary(Mat: matrix, threshold: real): matrix = iterateBinarize(Mat, threshold);
 
-val m= [4.0,5.0,6.0];
-val n= [1.0,2.0,3.0];
+fun dotMultiplication([], _) = [] | dotMultiplication(_, []) = [] |  dotMultiplication(h1::t1: real list, h2::t2: real list) = h1 * h2::dotMultiplication(t1, t2);
 
-fun MatDot(MatA: matrix, MatB: matrix):matrix= [];
+fun sumDotProduct(list1: real list, list2: real list): real = sum(dotMultiplication(list1, list2));
 
-fun dotMultiplication([], _) = [] | dotMultiplication(_, []) = [] |  dotMultiplication(h1::t1: real list, h2::t2: real list) = h1 * h2::multiplyAndAdd(t1, t2);
-fun sumDotProduct(list1: real list, list2: real list) = sum(dotMultiplication(list1, list2));
+fun colToList([]) = [] |colToList(h::t: matrix): real list = getIth(h, 0)::colToList(t);
+
+fun getNthColumn(i: int, mat: matrix): real list = colToList(cropW(mat, (i, i+1)));
+
+fun getSingleDotProduct([],_, _, _) = 0.0|getSingleDotProduct(_,[], _, _) = 0.0|getSingleDotProduct(mat1: matrix, mat2: matrix, i: int, j: int): real = sumDotProduct(getNthColumn(j, mat2), getIth(mat1, i));
+
+fun computeRow([], _, _, _) = []| computeRow(_, [], _, _) = []|computeRow(mat1: matrix, mat2: matrix, i: int, j:int) = if len(getIth(mat2, 0)) > j then getSingleDotProduct(mat1, mat2, i, j)::computeRow(mat1, mat2, i, j+1) else [];
+
+fun computeMatrix(mat1: matrix, mat2: matrix, index: int): matrix = if (len(mat1)) > index then computeRow(mat1, mat2, index, 0)::computeMatrix(mat1, mat2, index+1) else [];
+
+fun MatDot(MatA: matrix, MatB: matrix):matrix= computeMatrix(MatA, MatB, 0);
