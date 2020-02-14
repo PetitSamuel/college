@@ -4,7 +4,7 @@
 
 The program starts by launching a thread which will listen for user input as well as a client that will listen for http requests. Then, any request received on that port will be directed to a method that I wrote called "onRequest".
 
-This method will first check to see if the request comes from a blocked domain. If it does then a response 403 Forbidden is returned. Otherwise it will either start a connexion for https or simply create a http client a send the request. The response is then forwarded back to the original sender.
+This method will first check to see if the request comes from a blocked domain. If it does then a response 403 Forbidden is returned. Otherwise it will either start a connexion for https or simply create a http client and send the request. The response is then forwarded back to the original sender.
 
 The only difference for https is that a connection needs to be formed before any content can be exchange which is why the "onRequest" method makes sure to redirect such requests to the method which creates such connections, it is called "httpsHandler".
 
@@ -174,8 +174,11 @@ func userInputHandler() {
 		len := len(input)
 		if len > 6 && input[0:6] == BLOCK_CMD {
 			var domain string = input[6:]
-			blocked = append(blocked, domain)
-			fmt.Printf("[SUCCESS] Blocked domain %s\n", domain)
+			var isBlocked bool = isDomainBlocked(domain)
+			if !isBlocked {
+				blocked = append(blocked, domain)
+				fmt.Printf("[SUCCESS] Blocked domain %s\n", domain)
+			}
 		} else if len > 8 && input[0:8] == UNBLOCK_CMD {
 			var found = removeBlockedDomainFromString(input[8:])
 			if !found {
@@ -184,7 +187,6 @@ func userInputHandler() {
 		} else {
 			fmt.Printf("[ERROR] Command not supported : %s\n", input)
 		}
-		printSlice(blocked)
 	}
 }
 
@@ -195,5 +197,4 @@ func main() {
 	fmt.Printf("[PROXY LISTENING ON PORT 8080]\n")
 	http.ListenAndServe(":8080", httpClient)
 }
-
 ```

@@ -140,8 +140,11 @@ func userInputHandler() {
 		len := len(input)
 		if len > 6 && input[0:6] == BLOCK_CMD {
 			var domain string = input[6:]
-			blocked = append(blocked, domain)
-			fmt.Printf("[SUCCESS] Blocked domain %s\n", domain)
+			var isBlocked bool = isDomainBlocked(domain)
+			if !isBlocked {
+				blocked = append(blocked, domain)
+				fmt.Printf("[SUCCESS] Blocked domain %s\n", domain)
+			}
 		} else if len > 8 && input[0:8] == UNBLOCK_CMD {
 			var found = removeBlockedDomainFromString(input[8:])
 			if !found {
@@ -150,7 +153,6 @@ func userInputHandler() {
 		} else {
 			fmt.Printf("[ERROR] Command not supported : %s\n", input)
 		}
-		printSlice(blocked)
 	}
 }
 
