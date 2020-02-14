@@ -1,9 +1,17 @@
-{imgsize} {printToken("IMAGE W/H", yytext);}
-{imageName} {printToken("NAME", yytext);}
-{headerLine} {printToken("HEADER", yytext);}
-{fullLine} {
+{char} {
     printToken("PIECE OF TEXT ", yytext);
     yylval = (char*)malloc(sizeof(char)*strlen(yytext));strcpy(yylval, yytext);return PARAGRAPH;
 }
-{bold} {printToken("BOLD", "**");}
-{italic} {printToken("ITALIC", yytext);}
+
+PARAGRAPH                 {add_element(html_doc, generate_paragraph($1));} 
+|HEAD                      {create_and_add_header($1);}
+;
+
+yylval = (char*)malloc(sizeof(char)*strlen(yytext));strcpy(yylval, yytext);return HEADER
+
+
+
+pcontent: header pcontent {add_element(html_doc, strappend($1, $2));}
+| rftext pcontent {add_element(html_doc, strappend($1, $2));}
+| header {add_element(html_doc, $1);}
+| rftext {add_element(html_doc, $1);}

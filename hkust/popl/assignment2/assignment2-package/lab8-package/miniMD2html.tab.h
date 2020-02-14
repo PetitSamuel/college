@@ -47,12 +47,9 @@ extern int yydebug;
   {
     T_BLANK = 258,
     T_NEWLINE = 259,
-    BOLD = 260,
-    ITALIC = 261,
-    IMAGE_SIZE = 262,
-    HEAD = 263,
-    WORD = 264,
-    PARAGRAPH = 265
+    HEADER = 260,
+    WORD = 261,
+    NUMBER = 262
   };
 #endif
 

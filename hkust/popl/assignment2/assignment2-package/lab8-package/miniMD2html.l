@@ -11,28 +11,27 @@ extern YYSTYPE yylval;
 whitespace [ \t]+
 newline [\n]+|{whitespace}[\n]+
 /************* Start: add your definitions here */
-textwork {char}+|{integer}
-line {whitespace}*{textwork}{whitespace}*
-fullLine {line}+
-digit [0-9]
-integer {digit}+
+textword {char}+
 char [a-zA-Z]|[:/.,']|[-]
 header #|##|###|####|#####|######
-bold [\*]{2}
-italic [_]
-imgsize [=]{integer}[@]{integer}
-boldText {boldSymbol}{line}*{boldSymbol}
-headerLine {header}{fullLine}
-imageName [\!][[]{fullLine}[]]
-/* End: add your definitions here */
+int [0-9]+
 %%
-{imgsize} {printToken("IMAGE W/H", yytext);}
-{imageName} {printToken("NAME", yytext);}
-{headerLine} {printToken("HEADER", yytext);}
-{fullLine} {
-    printToken("PIECE OF TEXT ", yytext);
-    yylval = (char*)malloc(sizeof(char)*strlen(yytext));strcpy(yylval, yytext);return PARAGRAPH;
+{header} {
+    yylval = strdup(yytext);
+    return HEADER;
 }
-{bold} {printToken("BOLD", "**");}
-{italic} {printToken("ITALIC", yytext);}
+{newline} {return T_NEWLINE;}
+{whitespace} {return T_BLANK;}
+{textword} {
+    yylval = strdup(yytext);
+    return WORD;
+}
+{int} {
+    yylval = strdup(yytext);
+    return NUMBER;
+}
+. {
+    yylval = strdup(yytext);
+    return *yytext;
+}
 %%

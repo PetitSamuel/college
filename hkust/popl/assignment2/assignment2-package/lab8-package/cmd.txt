@@ -1,1 +1,1 @@
-make && ./miniMD2html test_input1.md > test_output1.html && cat test_output1.html
+\clear && make clean && make && ./miniMD2html test_input1.md > test_output1.html && cat test_output1.html

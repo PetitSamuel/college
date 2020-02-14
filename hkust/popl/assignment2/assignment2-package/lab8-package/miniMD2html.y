@@ -13,57 +13,56 @@ extern FILE *yyin;
 Html_Doc *html_doc;
 %}
 
-/* Define tokens here */
-%token T_BLANK T_NEWLINE BOLD ITALIC IMAGE_SIZE HEAD WORD PARAGRAPH
- /************* Start: add your tokens here */
+%token T_BLANK T_NEWLINE HEADER WORD NUMBER
 
- 
 
-/* End: add your tokens here */
-
-%% /* Grammer rules and actions follow */
+%%
 s: mddoc;
 mddoc: /*empty*/ | mddoc paragraph;
-paragraph: 
-PARAGRAPH                 {add_element(html_doc, generate_paragraph($1));} 
-|HEAD                      {create_and_add_header($1);}
+paragraph: T_NEWLINE {add_linebreak(html_doc);}
+| pcontent T_NEWLINE {add_element(html_doc, $1);};
+
+pcontent: 
+header {
+  $$ = $1;
+}
+| rftext {
+  $$ = generate_paragraph($1);
+}
 ;
+header: 
+headermark blanks rftext {$$ = generate_header(strlen($1), $3);};
+headermark: HEADER {$$ = $1;};
+rftext: 
+rftext blanks rftextword {
+   $$ = strappend(strappend($1, " "), $3); 
+}
+| rftext rftextword  {
+   $$ = strappend($1, $2); 
+}
+| rftextword {$$ = $1;};
 
-
-/* End: add your grammar rules here */
+rftextword: textnum {$$ = $1;}
+| format {$$ = $1;}
+| image {$$ = $1;};
+image: '!''[' text ']''(' text '=' NUMBER '@' NUMBER ')' {
+  $$ = generate_image($3, $6, atoi($8), atoi($10));
+};
+format: '*''*' text '*''*' {$$ = generate_bold($3);}
+| '_' text '_' {$$ = generate_italic($2);}
+| '*''*' format '*''*' {$$ = generate_bold($3);}
+| '_' format '_' {$$ = generate_italic($2);};
+text: text blanks textnum {
+   $$ = strappend(strappend($1, " "), $3); 
+}
+| text textnum {
+   $$ = strappend($1, $2); 
+}
+|textnum {$$ = $1;};
+textnum: WORD
+| NUMBER;
+blanks: T_BLANK {$$ = " ";};
 %%
-int get_header_level(char *s) {
-  char * t; // first copy the pointer to not change the original
-  int size = 0;
-
-  for (t = s; *t == '#'; t++) {
-    size++;
-  }
-
-  return size;
-}
-
-char *get_header_substr(char *s) {
-  int amount = get_header_level(s);
-  int len = strlen(s) - amount;
-  char otherString[len]; 
-  char * t = s + amount;
-  int size = amount;
-
-  for (int a = amount; a < len; a++) {
-    otherString[a] = t++;
-  }
-  char * p = otherString;
-  return p;
-}
-
-int create_and_add_header(char *s) {
-  int a = get_header_level(s);
-  char *ptr = get_header_substr(s);
-  add_element(html_doc, generate_header(a, ptr));
-  return 0;
-}
-
 
 int main(int argc, char *argv[]) {
   // yydebug = 1;
