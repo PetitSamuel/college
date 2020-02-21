@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../Desktop/multiplexer.vhd" \
-"../../../../../Desktop/multiplexer_tb.vhd" \
-
-# Do not sort compile order
-nosort
