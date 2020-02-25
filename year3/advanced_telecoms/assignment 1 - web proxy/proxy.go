@@ -100,6 +100,7 @@ func checkCache(r *http.Request) (*http.Response, error) {
 	if cachedResponse.expiryTime.Sub(time.Now().Local()) < 0 {
 		delete(cache, string(dumpedRequest))
 		fmt.Printf("[INFO] Deleted expired cache\n")
+		return res, errors.New("[ERROR] Cache entry expired. It was deleted.")
 	}
 
 	// response is stored as array of byte. Read it to http
@@ -198,6 +199,7 @@ func onRequest(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
+
 	// set expiry time for cache - if none specified keep for 24h
 	expiryCacheTime := time.Now().Local()
 	if maxAge != "" && !isFromCache {
@@ -211,6 +213,7 @@ func onRequest(w http.ResponseWriter, r *http.Request) {
 	} else {
 		expiryCacheTime = expiryCacheTime.Add(time.Hour * 24)
 	}
+
 	fmt.Printf("[INFO] Expiry Time for cache: ")
 	fmt.Println(expiryCacheTime)
 
